@@ -1,0 +1,1531 @@
+/* 
+    MZB Site - Pixel Perfect Replication 
+    Based on precise measurements from 1920px width design 
+*/
+
+:root {
+    --color-coffee-dark: #241506;
+    --color-blue-mzb: #036398;
+    --color-text-dark: #5C5B5A;
+    --color-text-light: #F2F2F2;
+    --color-bg-gray: #F2F2F2;
+    --color-footer: #036398;
+    --font-serif: 'Cormorant Garamond', serif;
+    --font-sans: 'Figtree', sans-serif;
+    --font-nav: 'Raleway', sans-serif;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #fff;
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+    width: 100%;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* 
+   HEADER 
+   Layout: Boxed White strip, Thinner height
+*/
+.header {
+    position: absolute;
+    /* Floating above hero */
+    top: 40px;
+    /* Distance from top */
+    left: 50%;
+    transform: translateX(-50%);
+    /* Center horizontally */
+    width: 94%;
+    /* Boxed width (with side spacing) */
+    max-width: 1600px;
+    /* Max width constraint */
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    background-color: #FFFFFF;
+    /* White background within box */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    /* Stronger shadow for floating effect */
+}
+
+.header-inner {
+    width: 100%;
+    height: 70px;
+    /* Thinner height */
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    /* Left, Center, Right */
+    align-items: center;
+}
+
+/* Left: Nav */
+.nav-left {
+    padding-left: 40px;
+    /* Reduced padding */
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.nav-left ul {
+    display: flex;
+    gap: 30px;
+    /* Tighter spacing */
+    height: 100%;
+    align-items: center;
+}
+
+.nav-left a {
+    font-family: var(--font-sans);
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    color: #808080;
+    /* Grey for non-active */
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+.nav-left a:hover {
+    color: var(--color-blue-mzb);
+}
+
+.nav-left a.active {
+    font-weight: 700;
+    /* Bold for active */
+    color: #241506;
+    /* Dark for active, or stick to blue? User didn't specify active color, just 'normal + #808080' for others. 
+       Use dark coffee for strong contrast or Blue. Let's use Dark Coffee #241506 to match "bold" emphasis, 
+       but keeping hover blue. Explicitly setting active color to ensure it's not grey. */
+}
+
+/* Center: Logo Box */
+.logo-box {
+    background-color: var(--color-blue-mzb);
+    height: 100%;
+    padding: 0 50px;
+    /* Adjust width of blue box */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-box img {
+    height: 35px;
+    /* Smaller logo for thinner header */
+    filter: brightness(0) invert(1);
+}
+
+/* Right: Contact */
+.contact-right {
+    padding-right: 40px;
+    /* Reduced padding */
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.btn-contact {
+    font-family: var(--font-nav);
+    font-weight: 700;
+    font-size: 11px;
+    /* Slightly smaller */
+    letter-spacing: 1.5px;
+    color: #241506;
+    padding: 10px 30px;
+    /* Smaller padding */
+    border: 1px solid #241506;
+    text-transform: uppercase;
+    transition: all 0.3s;
+}
+
+.btn-contact:hover {
+    background: #241506;
+    color: #FFF;
+}
+
+/* 
+   HERO SECTION 
+   Height: 1079px in design design
+*/
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    /* Viewport height for web */
+    min-height: 900px;
+    /* Maintain design scale */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-text-container {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    margin-top: 100px;
+    /* Offset for header */
+}
+
+.hero-headline {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    font-size: 70px;
+    /* Exact design size */
+    color: #FFF;
+    line-height: 1.1;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.hero-headline .italic {
+    font-style: italic;
+    font-weight: 400;
+}
+
+.hero-headline strong {
+    font-weight: 700;
+}
+
+/* 
+   ABOUT SECTION 
+   Padding: Adjusted to accommodate overlapping cup and logo
+*/
+.about {
+    position: relative;
+    padding-top: 280px;
+    /* Reduced to bring text closer to logo */
+    padding-bottom: 120px;
+    background: #FFF;
+    overflow: visible;
+    /* Allow cup to overflow top */
+    z-index: 10;
+    /* Above hero for overlap */
+}
+
+.divider-container {
+    position: absolute;
+    top: -100px;
+    /* Pull up to overlap Hero/About boundary */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 20;
+    width: 100%;
+    /* Ensure it centers properly */
+}
+
+.divider-cup {
+    width: 200px;
+    /* Adjust size based on design */
+    height: 200px;
+    margin-bottom: 60px;
+    /* Adjusted spacing */
+}
+
+.divider-cup img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* No rotation animation as requested */
+}
+
+.divider-logo {
+    width: 300px;
+    /* Adjust based on signature size */
+    margin-bottom: 20px;
+    /* Space between logo and text */
+}
+
+.divider-logo img {
+    filter: none;
+    /* Removed filter as requested */
+    display: block;
+    margin: 0 auto;
+    /* Ensure image is centered in its box */
+}
+
+.about-container {
+    max-width: 990px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.about-header {
+    margin-bottom: 40px;
+    position: relative;
+    /* Removed badge styles */
+}
+
+.section-title {
+    font-family: var(--font-serif);
+    font-size: 45px;
+    /* Reduced from 60px */
+    font-weight: 300;
+    color: var(--color-text-dark);
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+
+.section-title strong {
+    font-weight: 700;
+}
+
+.about-text p {
+    font-family: var(--font-sans);
+    font-size: 20px;
+    color: var(--color-text-dark);
+    line-height: 1.5;
+    margin-bottom: 28px;
+}
+
+.floating-bean {
+    position: absolute;
+    top: -50px;
+    right: -300px;
+    /* Push out to right */
+    width: 275px;
+    animation: rotateBean 20s linear infinite;
+}
+
+@keyframes rotateBean {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* 
+   PROCESS SECTION
+   Height: 513px
+*/
+.process {
+    width: 100%;
+    height: 513px;
+    display: flex;
+}
+
+.process-grid {
+    display: flex;
+    width: 100%;
+}
+
+.process-img {
+    flex: 1;
+    height: 513px;
+}
+
+.process-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 
+   PRODUCTS SECTION
+   Background: #F2F2F2
+*/
+.products {
+    background-color: var(--color-bg-gray);
+    padding: 100px 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.products-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.products-title-col {
+    width: 30%;
+    padding-top: 50px;
+}
+
+.section-title-products {
+    font-family: var(--font-serif);
+    font-size: 60px;
+    line-height: 1;
+    color: var(--color-text-dark);
+    font-weight: 300;
+}
+
+.section-title-products strong {
+    font-weight: 700;
+}
+
+.products-content-col {
+    width: 65%;
+}
+
+.logos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 columns for logos */
+    row-gap: 40px;
+    column-gap: 40px;
+    margin-bottom: 60px;
+}
+
+.logo-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* New Full Width Packshots */
+.products-full-width {
+    width: 100%;
+    max-width: 1600px;
+    margin: 40px auto 0;
+    display: flex;
+    justify-content: center;
+    /* Explicit centering */
+}
+
+.products-full-width img {
+    width: 85%;
+    /* Slightly reduced to standard */
+    height: auto;
+    object-fit: contain;
+}
+
+
+/* 
+   VALUES SECTION 
+   Background: acj.png (Dark texture)
+*/
+.values {
+    background: url('../images/acj.png') no-repeat center center;
+    background-size: cover;
+    height: 700px;
+    /* Adjusted height */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    /* Align content to right */
+    position: relative;
+}
+
+.values-bg {
+    display: none;
+}
+
+.values-content {
+    width: 600px;
+    /* Increased width to allow better text wrapping */
+    margin-right: 5%;
+    color: #FFF;
+    text-align: left;
+    z-index: 2;
+}
+
+.values-title {
+    font-family: 'Cormorant Garamond', serif !important;
+    /* Force font */
+    font-weight: 300;
+    font-size: 52px;
+    /* Increased for impact */
+    line-height: 1.1;
+    margin-bottom: 25px;
+    font-style: italic !important;
+    color: #FFF;
+    letter-spacing: 0.5px;
+}
+
+.values-title strong {
+    font-family: 'Cormorant Garamond', serif !important;
+    font-weight: 700 !important;
+    /* Bold Italic */
+    font-style: italic !important;
+    color: #FFF;
+}
+
+.values-content p {
+    font-family: var(--font-sans);
+    font-size: 18px;
+    /* Slightly smaller than title for hierarchy */
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    /* Subtle transparency */
+    letter-spacing: 0.5px;
+}
+
+/* 
+   SUSTAINABILITY
+   Height: 855px
+*/
+.sustainability {
+    position: relative;
+    height: 855px;
+    display: flex;
+    align-items: center;
+}
+
+.sust-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.sust-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sust-content-wrapper {
+    position: relative;
+    z-index: 2;
+    padding-left: 12%;
+    /* Layout offset */
+}
+
+.sust-box {
+    width: 618px;
+    height: 618px;
+    background-color: rgba(3, 99, 152, 0.6);
+    /* MZB Blue transparent */
+    padding: 80px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.sust-box p {
+    font-family: var(--font-sans);
+    font-size: 20px;
+    line-height: 1.5;
+    color: #FFF;
+}
+
+/* 
+   FOOTER
+   Height: 214px
+*/
+.footer {
+    background-color: var(--color-footer);
+    height: 214px;
+    display: flex;
+    align-items: center;
+    color: #FFF;
+}
+
+.footer-container {
+    width: 90%;
+    max-width: 1600px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.copyright {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.copyright .rights {
+    font-weight: 400;
+}
+
+.footer-center img {
+    height: 72px;
+    /* Logo size */
+}
+
+.btn-contact-footer {
+    border: 2px solid #fff;
+    padding: 15px 40px;
+    color: #fff;
+    font-weight: 700;
+    font-family: var(--font-nav);
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    transition: 0.3s;
+}
+
+.btn-contact-footer:hover {
+    background: #fff;
+    color: var(--color-footer);
+}
+
+/* MENU TOGGLE (Mobile) */
+.menu-toggle {
+    display: none;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1200px) {
+    .header {
+        padding: 0 30px;
+    }
+
+    .nav-menu a {
+        font-size: 11px;
+    }
+
+    .hero-headline {
+        font-size: 50px;
+    }
+
+    .products-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .products-title-col {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .products-content-col {
+        width: 80%;
+    }
+
+    .values-content {
+        width: 60%;
+        margin-right: 5%;
+    }
+
+    .sust-content-wrapper {
+        padding-left: 5%;
+    }
+
+    .sust-box {
+        width: 500px;
+        height: 500px;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 1001;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .menu-toggle span {
+        width: 30px;
+        height: 3px;
+        background: #252525;
+        transition: 0.3s;
+    }
+
+    .nav-left {
+        position: fixed;
+        top: 0;
+        left: -320px;
+        /* Start off-screen */
+        width: 300px;
+        /* Sidebar width */
+        height: 100vh;
+        background: #FFF;
+        flex-direction: column;
+        justify-content: flex-start;
+        /* Align to top */
+        padding-top: 100px;
+        /* Space for top */
+        transition: 0.3s ease-in-out;
+        z-index: 1000;
+        box-shadow: 4px 0 15px rgba(0, 0, 0, 0.1);
+        /* Shadow for depth */
+    }
+
+    .nav-left.active {
+        left: 0;
+    }
+
+    .nav-left ul {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .logo-box {
+        background: transparent;
+        padding: 0;
+    }
+
+    .logo-box img {
+        filter: none;
+        /* Removed filter as requested */
+        height: 40px;
+    }
+
+    .contact-right {
+        display: none;
+    }
+
+    .header-inner {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 20px;
+    }
+
+    .header {
+        top: 0;
+    }
+
+    .contact-btn-wrapper {
+        display: none;
+    }
+
+    .hero-headline {
+        font-size: 32px;
+        padding: 0 20px;
+    }
+
+    .section-title,
+    .section-title-products {
+        font-size: 36px;
+    }
+
+    .process-grid {
+        flex-direction: column;
+    }
+
+    .process {
+        height: auto;
+    }
+
+    .process-img {
+        height: 300px;
+    }
+
+    .values-content {
+        width: 100%;
+        margin: 0;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .values {
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/acj.png') no-repeat center center;
+        background-size: cover;
+        height: auto;
+        padding: 60px 0;
+    }
+
+    .sust-box {
+        width: 90%;
+        height: auto;
+        padding: 40px;
+    }
+
+    .sustainability {
+        height: auto;
+        padding: 60px 0;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .footer {
+        height: auto;
+        padding: 40px 0;
+    }
+}
+
+/* =========================================
+   PAGE: ABOUT US (SOBRE NÓS)
+   ========================================= */
+
+/* Hero Section */
+.about-hero {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.about-hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.about-hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    /* Dark overlay for text readability */
+    z-index: 1;
+}
+
+.about-hero-text {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #fff;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.hero-headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.hero-headline .light {
+    font-weight: 300;
+}
+
+.hero-subtext {
+    font-family: 'Figtree', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* MVQ Section (Mission, Vision, Quality) */
+.mvq-section {
+    padding: 80px 20px;
+    background-color: #fff;
+}
+
+.mvq-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.mvq-card {
+    background: #f9f9f9;
+    padding: 40px;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid #eee;
+}
+
+.mvq-icon {
+    margin-bottom: 20px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mvq-icon img {
+    max-height: 100%;
+    width: auto;
+}
+
+.mvq-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    color: #241506;
+    /* Dark Coffee */
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.mvq-content p {
+    font-family: 'Figtree', sans-serif;
+    color: #555;
+    line-height: 1.6;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+/* Quality card (Large) */
+.mvq-card.large {
+    grid-column: 1 / -1;
+    background: #241506;
+    /* Dark Coffee */
+    color: #fff;
+    border: none;
+}
+
+.mvq-card.large .mvq-title {
+    color: #fff;
+}
+
+.mvq-card.large .mvq-content p {
+    color: #ddd;
+}
+
+/* Global Structure */
+.global-structure {
+    padding: 100px 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.global-header {
+    max-width: 800px;
+    margin: 0 auto 60px;
+    position: relative;
+    z-index: 2;
+}
+
+.section-subtitle {
+    font-family: 'Figtree', sans-serif;
+    font-size: 1.1rem;
+    color: #666;
+    margin-top: 20px;
+    line-height: 1.6;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.stat-item {
+    padding: 20px;
+}
+
+.stat-number {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 5rem;
+    font-weight: 700;
+    color: #241506;
+    line-height: 1;
+}
+
+.stat-label {
+    display: block;
+    font-family: 'Figtree', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin: 10px 0 15px;
+    color: #888;
+    text-transform: uppercase;
+}
+
+.stat-desc {
+    font-family: 'Figtree', sans-serif;
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* Map bg */
+.global-map-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 1000px;
+    opacity: 0.05;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.global-map-bg img {
+    width: 100%;
+}
+
+/* Group Info */
+.group-info {
+    padding: 100px 20px;
+    background-color: #fff;
+}
+
+.group-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.group-text {
+    flex: 1;
+}
+
+.group-text p {
+    font-family: 'Figtree', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.group-images {
+    flex: 1;
+    display: flex;
+    gap: 20px;
+}
+
+.group-images img {
+    width: calc(50% - 10px);
+    border-radius: 4px;
+    object-fit: cover;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive specific to About page */
+@media (max-width: 768px) {
+    .hero-headline {
+        font-size: 2.5rem;
+    }
+
+    .mvq-container {
+        grid-template-columns: 1fr;
+    }
+
+    .mvq-card.large {
+        grid-column: auto;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .stat-number {
+        font-size: 4rem;
+    }
+
+    .group-content {
+        flex-direction: column;
+    }
+
+    .group-images {
+        width: 100%;
+    }
+}
+
+/* =========================================
+   PAGE: SOBRE NÓS (REVISED LAYOUT)
+   ========================================= */
+
+/* --- 1. Top Hero --- */
+.about-hero-section {
+    position: relative;
+    width: 100%;
+    height: 50vw;
+    /* Responsive height based on width, similar to design */
+    max-height: 600px;
+    min-height: 350px;
+    overflow: hidden;
+}
+
+.hero-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-img-cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center bottom;
+    /* Often showing the cups better */
+}
+
+.hero-text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    width: 90%;
+    max-width: 800px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero-text-overlay h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4rem;
+    font-weight: 400;
+    line-height: 1;
+    margin-bottom: 20px;
+    text-transform: capitalize;
+}
+
+.hero-text-overlay h1 span.italic {
+    font-style: italic;
+    font-weight: 400;
+}
+
+.hero-text-overlay p {
+    font-family: 'Figtree', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+
+/* --- 2. History Section (Images Left, Text Right) --- */
+.history-section {
+    padding: 0;
+    /* Glue to hero section */
+    padding-bottom: 80px;
+    background-color: #fff;
+    position: relative;
+    overflow: hidden;
+    /* Ensure background block doesn't overflow horizontally */
+}
+
+/* Grey background block: Glued to top, full width, height ~half of bottom image */
+.history-bg-block {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* We need it to extend until roughly half of the second image. 
+       Assuming grid is centered, let's use a percentage or fixed height. 
+       55% covers top image and part of bottom one usually. */
+    height: 65%;
+    background-color: #f2f2f2;
+    z-index: 0;
+    /* No border radius or weird positioning, just a block */
+}
+
+.history-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 60px;
+    align-items: start;
+    /* Align text to top */
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    /* Above background block */
+    padding: 80px 5% 0;
+    /* Add top padding inside grid to push content down from hero edge */
+}
+
+.history-images-col {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    /* Small spacing between images */
+}
+
+.img-container {
+    position: relative;
+    width: 100%;
+}
+
+.img-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Circle overlap between images */
+.circle-left-overlap {
+    position: absolute;
+    /* Position relative to top image container */
+    bottom: -60px;
+    left: -40px;
+    /* Aligned to left */
+    width: 120px;
+    height: 120px;
+    background-color: #d3d3d3;
+    /* Solid grey */
+    border-radius: 50%;
+    z-index: 10;
+    border: none;
+    opacity: 1;
+}
+
+.circle-bottom-right {
+    display: none;
+}
+
+/* Wait, "lado direito abaixo do texto". That's in the TEXT column, or generally right side of section? 
+   Usually "below text" means in the text column. */
+.history-text-col {
+    position: relative;
+    /* ... existing styles ... */
+    font-family: 'Figtree', sans-serif;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #333;
+    text-align: left;
+    padding-right: 20px;
+    padding-top: 40px;
+    /* Small spacing top alignment */
+}
+
+/* We need to move the circle to the text col or absolute in section */
+.circle-right-below-text {
+    position: absolute;
+    bottom: -60px;
+    right: -60px;
+    width: 180px;
+    height: 180px;
+    background-color: #e6e6e6;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+
+/* --- 3. Structure Section --- */
+.structure-section {
+    background-color: #fff;
+    padding: 80px 0;
+    text-align: center;
+    position: relative;
+    overflow: visible;
+    z-index: auto;
+    /* Allow children to interleave */
+}
+
+/* ... existing structure styles ... */
+.structure-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    color: #888;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+.structure-header h2 strong {
+    font-weight: 700;
+    color: #666;
+}
+
+.structure-header p {
+    font-family: 'Figtree', sans-serif;
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.5;
+    max-width: 800px;
+    margin: 0 auto 60px;
+}
+
+.stats-row {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 60px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.stat-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-num {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4.5rem;
+    color: #036398;
+    line-height: 1;
+    font-weight: 700;
+    font-style: italic;
+}
+
+.stat-label {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    color: #036398;
+    margin-bottom: 15px;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.stat-box p {
+    font-family: 'Figtree', sans-serif;
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.5;
+    max-width: 250px;
+}
+
+.structure-map-container {
+    width: 100%;
+    margin-top: 20px;
+    position: relative;
+    z-index: 50;
+    /* High z-index to cover the cup from below */
+    /* Ensure it has background to hide things behind */
+    padding-bottom: 40px;
+    /* Spacing */
+}
+
+.map-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+
+/* --- 4. MVQ Blue Section --- */
+.mvq-blue-section {
+    background-color: #036398;
+    color: #fff;
+    position: relative;
+    padding-top: 60px;
+    z-index: auto;
+    /* Allow cup to pop out */
+}
+
+.mvq-divider-img {
+    position: absolute;
+    top: -50px;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.mvq-divider-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.mvq-grid-layout {
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+    z-index: 6;
+}
+
+.mvq-left-content {
+    flex: 1;
+    padding: 60px 0% 0px 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.mvq-top-row {
+    display: flex;
+    gap: 30px;
+}
+
+.mvq-bottom-row {
+    width: 100%;
+}
+
+.mvq-box {
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    padding: 30px;
+    flex: 1;
+}
+
+.mvq-box h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.mvq-box h3 strong {
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+/* Right Image Block - The logic for the Cup overlapping upwards */
+/* Right Image Block - The logic for the Cup overlapping upwards */
+/* Right Image Block - The logic for the Cup overlapping upwards */
+.mvq-right-image {
+    width: 28%;
+    /* Restore width */
+    min-width: 320px;
+    position: relative;
+    margin-right: 8%;
+    /* Reduced spacing from right edge */
+    z-index: 15;
+    /* Interleave: below Map (50) andStats (20), but above Blue Section */
+}
+
+.cup-overflow-img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: auto;
+    width: 100%;
+    max-width: none;
+
+    /* Height logic: Needs to go UP just until the map interactions start */
+    height: auto;
+    min-height: 180%;
+    /* Go up, but essentially be constrained visually by layering */
+    /* If it shouldn't cover "stats-row", stats-row needs higher Z-index and background?? */
+    /* Or the image just shouldn't go THAT high. */
+
+    /* "Explodir para cima... ficar até a sessão Map" -> It should arrive AT the map area */
+    top: -550px;
+    /* Explicit upward pull instead of percentage height sometimes works better for "reach" */
+    height: calc(100% + 550px);
+    bottom: 0;
+
+    object-fit: contain;
+    /* "NÃO deve ser cortada, deve estar inteira" */
+    object-position: bottom center;
+
+    z-index: 10;
+}
+
+/* Ensure the image doesn't cover structure section content if z-index fails?
+   Structure section has z-index 20 + bg color, so it should COVER anything from below.
+   This image is in .mvq-right-image -> .mvq-blue-section (z-index 5).
+   So structure (20) > blue (5). The image sticking up will be hidden by structure bg. 
+   PERFECT.
+*/
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .about-hero-section {
+        height: 60vh;
+    }
+
+    .hero-text-overlay h1 {
+        font-size: 2.5rem;
+    }
+
+    .history-bg-block {
+        width: 100%;
+        right: 0;
+    }
+
+    .history-grid {
+        grid-template-columns: 1fr;
+        padding: 0 20px;
+    }
+
+    .circle-left-overlap {
+        display: none;
+    }
+
+    /* Hide complex deco on mobile usually */
+
+    .stats-row {
+        flex-direction: column;
+    }
+
+    .mvq-grid-layout {
+        flex-direction: column;
+    }
+
+    .mvq-top-row {
+        flex-direction: column;
+    }
+
+    .mvq-divider-img {
+        top: -20px;
+    }
+
+    .mvq-right-image {
+        display: none;
+    }
+
+    /* Usually hide complex intersection images on mobile or stack them specific way? */
+}
