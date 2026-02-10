@@ -559,11 +559,13 @@ ul {
    Height: 214px
 */
 .footer {
-    background-color: var(--color-footer);
+    background-color: #F2F2F2;
+    /* Updated to F2F2F2 */
     height: 214px;
     display: flex;
     align-items: center;
-    color: #FFF;
+    color: #5C5B5A;
+    /* Darker text for light background */
 }
 
 .footer-container {
@@ -591,9 +593,11 @@ ul {
 }
 
 .btn-contact-footer {
-    border: 2px solid #fff;
+    border: 2px solid #5C5B5A;
+    /* Dark border for light bg */
     padding: 15px 40px;
-    color: #fff;
+    color: #5C5B5A;
+    /* Dark text */
     font-weight: 700;
     font-family: var(--font-nav);
     font-size: 13px;
@@ -1528,4 +1532,470 @@ ul {
     }
 
     /* Usually hide complex intersection images on mobile or stack them specific way? */
+}
+
+/* =========================================
+   PAGE: SUSTENTABILIDADE (REFACTORED)
+   ========================================= */
+
+.page-sustentabilidade {
+    width: 100%;
+    overflow-x: hidden;
+    padding-top: 0;
+}
+
+/* 1. HERO */
+.sust-hero {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    min-height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.sust-hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.sust-hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sust-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 2;
+}
+
+.sust-hero-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+}
+
+.hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 71px;
+    /* Exact from XD */
+    color: #fff;
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: 700;
+    /* Bold */
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    margin: 0;
+}
+
+/* 2. PRÁTICAS (White Section) */
+.sust-praticas {
+    background-color: #fff;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.sust-praticas h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 60px;
+    /* Exact from XD */
+    font-weight: 300;
+    /* Lighter */
+    color: #5C5B5A;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    letter-spacing: 0;
+}
+
+.sust-praticas p {
+    font-family: 'Figtree', sans-serif;
+    font-size: 18px;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+
+/* 3. QUALIDADE / FUNCIONAMENTO (Dark Image Section) */
+.sust-qualidade {
+    position: relative;
+    width: 100%;
+    min-height: 800px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    /* Vertically center content */
+}
+
+.sust-qualidade-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.sust-qualidade-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center right;
+    /* Focus on the woman on the right */
+}
+
+/* Container for content on top of image */
+.sust-qualidade .container-sust {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+}
+
+.qualidade-grid {
+    width: 100%;
+    display: flex;
+}
+
+.qualidade-content {
+    width: 50%;
+    /* Occupy left half */
+    padding-right: 50px;
+}
+
+.qualidade-spacer {
+    width: 50%;
+    /* Right half empty for image */
+}
+
+.section-title-qualidade {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 45px;
+    /* Exact from XD */
+    line-height: 1.1;
+    margin-bottom: 50px;
+    color: #fff;
+    font-weight: 300;
+    /* Lighter */
+    text-transform: uppercase;
+}
+
+.section-title-qualidade .light {
+    font-weight: 300;
+    font-style: italic;
+}
+
+.section-title-qualidade strong {
+    font-weight: 700;
+    font-style: italic;
+}
+
+.section-title-qualidade .italic {
+    font-style: italic;
+    font-weight: 400;
+}
+
+.qualidade-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.qualidade-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.icon-box {
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #fff;
+    /* White circular border */
+    border-radius: 50%;
+}
+
+.icon-box img {
+    max-width: 50%;
+    /* Reduced size */
+    max-height: 50%;
+    object-fit: contain;
+}
+
+.text-box h3 {
+    font-family: 'Figtree', sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    color: #fff;
+    letter-spacing: 0.5px;
+}
+
+.text-box p {
+    font-family: 'Figtree', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+
+/* 4. CERTIFICATIONS */
+.sust-certifications {
+    background: linear-gradient(180deg, #FFFFFF 65%, #F2F2F2 65%);
+    /* Shifted split down to intersect boxes */
+    padding: 100px 0 60px 0;
+    text-align: center;
+}
+
+.cert-header {
+    margin-bottom: 60px;
+}
+
+.cert-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 71px;
+    /* Exact from XD */
+    color: #036398;
+    /* Blue */
+    font-style: normal;
+    font-weight: 700;
+    /* Bold */
+    margin-bottom: 20px;
+    text-transform: capitalize;
+}
+
+.cert-header p {
+    font-family: 'Figtree', sans-serif;
+    font-size: 16px;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cert-grid-layout {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    /* Align top */
+    gap: 100px;
+    flex-wrap: wrap;
+}
+
+.cert-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    /* Default width */
+}
+
+.iso-block {
+    max-width: 400px;
+}
+
+.pqc-block {
+    max-width: 850px;
+    /* Wider for 4 logos */
+}
+
+.cert-img-wrapper {
+    background: #fff;
+    border: 1px solid #D1D1D1;
+    /* Light grey border */
+    padding: 30px;
+    width: 100%;
+    height: 220px;
+    /* Fixed height for boxes */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cert-img-wrapper img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.row-logos {
+    gap: 15px;
+}
+
+.cert-caption {
+    font-family: 'Figtree', sans-serif;
+    font-size: 12px;
+    color: #333;
+    text-transform: uppercase;
+    line-height: 1.4;
+}
+
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+@media (max-width: 1024px) {
+    .qualidade-content {
+        width: 70%;
+        background: rgba(0, 0, 0, 0.6);
+        /* Add darker bg for readability if image is busy */
+        padding: 30px;
+        border-radius: 10px;
+    }
+
+    .qualidade-spacer {
+        width: 30%;
+    }
+
+    .cert-grid-layout {
+        gap: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* Hero */
+    .sust-hero {
+        height: 400px;
+    }
+
+    .hero-title {
+        font-size: 48px;
+    }
+
+    /* Praticas */
+    .sust-praticas {
+        padding: 60px 0;
+    }
+
+    .sust-praticas h2 {
+        font-size: 32px;
+    }
+
+    /* Qualidade */
+    .sust-qualidade {
+        min-height: auto;
+        padding: 60px 0;
+    }
+
+    .sust-qualidade-bg img {
+        object-position: center;
+        /* Center image on mobile */
+        opacity: 0.4;
+        /* Dim image for text readability */
+        background: #000;
+    }
+
+    .sust-qualidade-bg {
+        background: #000;
+    }
+
+    .qualidade-content {
+        width: 100%;
+        padding: 0;
+        padding-right: 0;
+        background: transparent;
+    }
+
+    .qualidade-spacer {
+        display: none;
+    }
+
+    /* Certifications */
+    .cert-grid-layout {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cert-img-wrapper {
+        height: auto;
+    }
+
+    .row-logos {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .row-logos img {
+        height: 60px;
+    }
+}
+
+.icon-box-noborder {
+    border: none !important;
+    width: 60px;
+    /* Keep spacing */
+    height: 60px;
+}
+
+.icon-box-noborder img {
+    max-width: 100% !important;
+    /* Full size for Eureciclo logo */
+    max-height: 100% !important;
+}
+/* Dropdown functionality */
+.nav-left li {
+    position: relative; /* Parent for positioning dropdown */
+}
+
+.nav-left ul li ul.dropdown-menu {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 100%; /* Below parent */
+    left: 0;
+    background-color: #ffffff;
+    min-width: 180px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    z-index: 1000;
+    padding: 10px 0;
+    flex-direction: column !important; /* Force column layout */
+    gap: 0 !important; /* Remove gap from parent ul */
+    border-top: 2px solid var(--color-blue-mzb); /* Accent top border */
+}
+
+.nav-left li:hover > .dropdown-menu {
+    display: flex !important; /* Show on hover */
+}
+
+.nav-left .dropdown-menu li {
+    width: 100%;
+}
+
+.nav-left .dropdown-menu a {
+    display: block;
+    padding: 12px 20px;
+    color: #808080;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    text-align: left;
+    transition: all 0.2s ease;
+}
+
+.nav-left .dropdown-menu a:hover,
+.nav-left .dropdown-menu a.active {
+    background-color: #f9f9f9;
+    color: var(--color-blue-mzb);
+    font-weight: 700;
 }
