@@ -1416,6 +1416,215 @@
             max-width: 800px !important;
             /* Cap width for readability */
         }
+
+        /* RESPONSIVE LAYOUT (Mobile/Tablet) */
+        /* 
+           RESPONSIVE REFACTOR 
+           Forcefully override Adobe XD absolute positioning structure 
+        */
+        @media (max-width: 1024px) {
+
+            /* HEADER & NAV FIXES */
+            header.header {
+                position: fixed !important;
+                z-index: 9999 !important;
+                width: 100% !important;
+                top: 0 !important;
+                left: 0 !important;
+            }
+            
+            main {
+                padding-top: 100px !important;
+                overflow-x: hidden !important; /* Prevent horizontal scroll */
+            }
+
+            /* UNIVERSAL RESET for the XD Container */
+            #n_2_-_SUSTENTABILIDADE, 
+            #n_2_-_SUSTENTABILIDADE * {
+                position: relative !important;
+                top: auto !important;
+                left: auto !important;
+                right: auto !important;
+                bottom: auto !important;
+                width: auto !important;
+                height: auto !important;
+                transform: none !important;
+                min-height: 0 !important;
+                max-width: 100% !important;
+                box-sizing: border-box !important;
+            }
+
+            #n_2_-_SUSTENTABILIDADE {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                background: #fff !important;
+                padding: 20px 15px 50px 15px !important;
+                gap: 40px !important;
+            }
+
+            /* Hide Background shapes/SVGs/Rects */
+            svg, rect, .aac, .aah, .aan, .acd, .aao, .abo, .aci, .add {
+                display: none !important;
+            }
+
+            /* CONTENT VISIBILITY & LAYOUT */
+
+            /* 1. Main Title "SUSTENTABILIDADE" (#aaj) */
+            #aaj {
+                display: block !important;
+                font-size: 32px !important;
+                line-height: 1.2 !important;
+                text-align: center !important;
+                margin-top: 20px !important;
+                white-space: normal !important;
+                color: #241506 !important;
+            }
+
+            /* 2. Intro Text Sections */
+            #aau, #aat {
+                display: block !important;
+                text-align: center !important;
+                font-size: 18px !important; /* Readable size */
+                line-height: 1.5 !important;
+                white-space: normal !important;
+                margin: 0 !important;
+            }
+            #aat {
+                font-size: 24px !important;
+                margin-bottom: 20px !important;
+                color: #241506 !important;
+            }
+
+            /* 3. Map Section */
+            #aar {
+                display: flex !important;
+                justify-content: center !important;
+                margin: 20px 0 !important;
+                width: 100% !important;
+            }
+            #aar img, #aas {
+                display: block !important;
+                width: 100% !important;
+                height: auto !important;
+                max-width: 500px !important; /* Limit map width on tablets */
+            }
+
+            /* 4. Práticas Sustentáveis (#abn wrapper) */
+            #abn {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                gap: 20px !important;
+                margin-top: 20px !important;
+                width: 100% !important;
+            }
+            /* Title "PRÁTICAS..." */
+            #abp {
+                font-size: 28px !important;
+                text-align: center !important;
+                white-space: normal !important;
+                line-height: 1.2 !important;
+            }
+            /* Description */
+            #abq {
+                font-size: 16px !important;
+                text-align: center !important;
+                white-space: normal !important;
+                line-height: 1.5 !important;
+            }
+
+            /* 5. Certifications Section (#acc wrapper) */
+            #acc {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                gap: 30px !important;
+                width: 100% !important;
+            }
+            /* "Nossas Certificações" wrapper */
+            #ace {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 10px !important;
+                align-items: center !important;
+            }
+            /* Title */
+            #acf {
+                font-size: 28px !important;
+                text-align: center !important;
+                white-space: normal !important;
+                margin: 0 !important;
+            }
+            /* Desc */
+            #acg {
+                font-size: 16px !important;
+                text-align: center !important;
+                white-space: normal !important;
+            }
+
+            /* Logos Containers (#ach, #adc) */
+            /* PQC Logos */
+            #ach, #act {
+                display: flex !important;
+                flex-direction: column !important; /* Default column for small screens */
+                align-items: center !important;
+                gap: 20px !important;
+            }
+            /* Allow grid flow for logos inside #act */
+            #act {
+                flex-direction: row !important;
+                flex-wrap: wrap !important;
+                justify-content: center !important;
+            }
+
+            /* Individual Logo Containers (generated divs) */
+            #act > div, #ade {
+                width: 120px !important; /* Fix logo container widths */
+                display: flex !important;
+                justify-content: center !important;
+                align-items: center !important;
+            }
+            #act img, #ade img {
+                width: 100% !important;
+                height: auto !important;
+                object-fit: contain !important;
+            }
+
+            /* ISO Section */
+            #adc {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                gap: 15px !important;
+            }
+            #ade {
+                width: 180px !important; /* ISO logo might be bigger */
+            }
+
+            /* 6. Hide Elements meant for Desktop Layout or Duplicates */
+            #abz, #adt, #adv, #ady, #aea, #abr, #adl, #adj, #adh, #ads, #adu, #adx, #adz, #aeb, #adg, #acs {
+                /* 
+                   Hiding nav-links (#adt...), small text labels (#ads, #acs...), 
+                   and other non-essential decorative/absolute elements.
+                   Keeping #adg and #acs hidden as they are usually small caption texts 
+                   that might float weirdly. If they are needed, we can unhide them specifically.
+                   Checking #adg ("ISO 9001") and #acs ("PQC..."). These ARE needed.
+                */
+                display: none !important;
+            }
+
+            /* Re-enable Labels for Certifications */
+            #adg, #acs { 
+                display: block !important; 
+                width: 100% !important; 
+                margin-top: 10px !important;
+                font-size: 14px !important;
+                font-weight: bold !important;
+                color: #555 !important;
+            }
+
+        }
     </style>
 
 </head>
