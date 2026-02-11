@@ -448,19 +448,41 @@ ul {
    Background: acj.png (Dark texture)
 */
 .values {
-    background: url('../images/acj.png') no-repeat center center;
-    background-size: cover;
+    /* Background moved to properties of .values-bg for consistency */
+    position: relative;
     height: 700px;
     /* Adjusted height */
     display: flex;
     align-items: center;
     justify-content: flex-end;
     /* Align content to right */
-    position: relative;
+    overflow: hidden;
 }
 
 .values-bg {
-    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.values-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.values-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    /* 50% black overlay */
+    z-index: 2;
 }
 
 .values-content {
@@ -2095,6 +2117,7 @@ ul {
         /* Show when open */
     }
 }
+
 /* --- Custom Overrides --- */
 .footer-blue {
     background-color: #036398 !important;
@@ -2115,8 +2138,8 @@ ul {
     color: #FFFFFF !important;
 }
 
-.footer-blue p, 
-.footer-blue span, 
+.footer-blue p,
+.footer-blue span,
 .footer-blue a {
     color: #FFFFFF !important;
 }
@@ -2129,4 +2152,462 @@ ul {
 .footer-blue .btn-contact-footer:hover {
     background-color: #FFFFFF !important;
     color: #036398 !important;
+}
+
+/* Marcas Page */
+.products-hero-section {
+    position: relative;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.products-hero-section h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    color: #002D72;
+    margin-bottom: 30px;
+    text-align: left;
+    padding-left: 5%;
+}
+
+.products-hero-section h1 strong {
+    font-weight: 700;
+}
+
+.products-image-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 90%;
+    max-width: 1400px;
+}
+
+.products-image-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- MARCAS / PRODUCTS PAGE STYLES --- */
+
+/* utilities */
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.uppercase-title {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 2.5rem;
+    color: #002D72;
+}
+
+.uppercase-title strong {
+    font-weight: 700;
+}
+
+.uppercase-title.white {
+    color: #fff;
+}
+
+.uppercase-title.light {
+    color: #f0f0f0;
+}
+
+/* slightly off-white for contrast */
+
+.script-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 3.5rem;
+    color: #002D72;
+    margin-bottom: 20px;
+}
+
+.script-title.blue {
+    color: #002D72;
+}
+
+/* 1. Hero Section */
+.products-hero-full {
+    position: relative;
+    background: linear-gradient(90deg, #001f4d 0%, #004080 100%);
+    height: 400px;
+    /* Adjust based on image aspect ratio */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.hero-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-image-right {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 60%;
+    /* Occupies right side */
+    overflow: hidden;
+}
+
+.hero-image-right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center right;
+}
+
+.hero-title-overlay {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4rem;
+    color: #fff;
+    z-index: 10;
+}
+
+.hero-title-overlay em {
+    font-style: italic;
+    font-weight: 300;
+}
+
+/* 2. Food Service Intro */
+.section-food-service-intro {
+    padding: 60px 0;
+    background-color: #fff;
+}
+
+.intro-description {
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: 'Figtree', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* 3. Food Service Images Grid */
+.section-food-service-images {
+    padding-bottom: 0;
+}
+
+.fs-grid {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.fs-item {
+    flex: 1 1 50%;
+    height: 400px;
+}
+
+.fs-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 4. Excellence Section */
+.section-excellence {
+    background-color: #111;
+    /* Very dark background */
+    padding: 80px 0;
+    color: #ccc;
+}
+
+.excellence-desc {
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    font-family: 'Raleway', sans-serif;
+    line-height: 1.6;
+}
+
+.excellence-desc.light {
+    color: #ddd;
+}
+
+.products-showcase {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.product-bags-img {
+    width: 55vw;
+    max-width: 950px;
+    min-width: 300px;
+    height: auto;
+}
+
+.segafredo-logo {
+    width: 20vw;
+    max-width: 350px;
+    min-width: 200px;
+    height: auto;
+    transform: translateY(-80px);
+}
+
+/* 5. Machinery */
+.section-machinery {
+    background-color: #f4f4f4;
+    padding: 80px 0;
+}
+
+.machinery-grid {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.machinery-text {
+    flex: 1;
+    text-align: right;
+    color: #5C5B5A;
+    padding-left: 8%;
+    padding-right: 8%;
+}
+
+.machinery-text h2 {
+    text-align: right;
+    /* Ensure title is also right aligned */
+    width: 100%;
+    color: #5C5B5A;
+}
+
+.machinery-text p {
+    color: #5C5B5A;
+    margin-left: auto;
+    /* Push text block to right if it has max-width */
+}
+
+.machinery-image {
+    flex: 1;
+}
+
+.machinery-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+/* 6. More Than Coffee */
+.section-more-than-coffee {
+    position: relative;
+    width: 100%;
+}
+
+.full-width-image-container {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+}
+
+.bg-img-cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.overlay-box-blue {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #036398;
+    padding: 40px;
+    max-width: 500px;
+    color: #fff;
+}
+
+.overlay-box-blue p {
+    font-family: 'Figtree', sans-serif;
+    line-height: 1.6;
+}
+
+/* 7. Partner */
+.section-partner {
+    padding: 80px 0;
+    background-color: #F2F2F2;
+}
+
+.section-partner h2,
+.section-partner p,
+.section-partner strong {
+    color: #5C5B5A;
+}
+
+/* 8. Private Label */
+.section-private-label {
+    padding: 60px 0 100px 0;
+    background-color: #fff;
+}
+
+.pl-intro {
+    max-width: 900px;
+    margin: 0 auto 50px auto;
+    color: #555;
+}
+
+.pl-full-width-container {
+    position: relative;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    /* Break out of parent constraints if any */
+    min-height: 700px;
+    background-image: url('../images/abu.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.pl-content-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    /* Aligns with standard container width */
+    padding: 0 20px;
+    display: flex;
+    justify-content: flex-start;
+    /* Align box to left */
+}
+
+.pl-text-box {
+    background-color: #036398;
+    color: #fff;
+    padding: 60px;
+    max-width: 650px;
+    font-family: 'Figtree', sans-serif;
+    line-height: 1.6;
+    font-size: 16px;
+    margin-left: 0;
+    /* Aligned with guidance of wrapper */
+}
+
+.pl-text-box p {
+    margin-bottom: 20px;
+}
+
+.pl-text-box p:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .pl-full-width-container {
+        width: 100%;
+        margin-left: 0;
+        padding: 40px 0;
+        min-height: auto;
+    }
+
+    .pl-content-wrapper {
+        justify-content: center;
+    }
+
+    .pl-text-box {
+        width: 90%;
+        max-width: 100%;
+        padding: 30px;
+    }
+}
+
+/* 9. Main Brands */
+.section-main-brands {
+    padding: 60px 0;
+    background-color: #fff;
+}
+
+.brands-row {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.brands-img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .products-hero-full {
+        flex-direction: column;
+        height: auto;
+        padding-bottom: 40px;
+    }
+
+    .hero-image-right {
+        position: relative;
+        width: 100%;
+        height: 300px;
+    }
+
+    .hero-title-overlay {
+        position: static;
+        transform: none;
+        text-align: center;
+        margin-top: -40px;
+        /* Pull up */
+        color: #fff;
+        /* Ensure visible on blue bg */
+        padding: 20px;
+    }
+
+    .fs-item {
+        flex: 1 1 100%;
+        /* Stack */
+    }
+
+    .machinery-grid {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .overlay-box-blue {
+        position: relative;
+        right: auto;
+        top: auto;
+        transform: none;
+        max-width: 100%;
+        margin-top: -50px;
+    }
+
+    .private-label-split {
+        flex-direction: column-reverse;
+        /* Image top, text bottom */
+    }
+
+    .pl-image {
+        min-height: 250px;
+    }
+}
+
+/* Additional styles for Excellence section updates */
+/* Conflicting styles removed to allow proper resizing defined above */
+
+/* Ensure Machinery image fits well */
+.machinery-image img {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
