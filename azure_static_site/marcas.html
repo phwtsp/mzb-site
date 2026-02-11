@@ -41,7 +41,21 @@
                         </ul>
                     </li>
                     <li><a href="marcas.html" class="nav-item active">NOSSAS MARCAS</a></li>
-                    <li><a href="#" class="nav-item">SERVIÇOS</a></li>
+                    <li class="has-submenu">
+                        <a href="#" class="nav-item">SERVIÇOS</a>
+                        <button class="submenu-toggle" aria-label="Toggle Submenu">
+                            <svg width="12" height="7" viewBox="0 0 12 7" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 1L6 6L11 1" stroke="#808080" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="exportacao.html" class="nav-item">EXPORTAÇÃO</a></li>
+                            <li><a href="marcas.html#food-service" class="nav-item">FOOD SERVICE</a></li>
+                            <li><a href="marcas.html#private-label" class="nav-item">PRIVATE LABEL</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </nav>
 
@@ -78,7 +92,7 @@
         </section>
 
         <!-- 2. FOOD SERVICE INTRO -->
-        <section class="section-food-service-intro">
+        <section class="section-food-service-intro" id="food-service">
             <div class="container text-center">
                 <h2 class="script-title">Food Service</h2>
                 <div class="intro-description">
@@ -178,7 +192,7 @@
         </section>
 
         <!-- 8. PRIVATE LABEL -->
-        <section class="section-private-label">
+        <section class="section-private-label" id="private-label">
             <div class="container">
                 <h2 class="script-title text-center blue">Private Label</h2>
                 <p class="text-center pl-intro">
