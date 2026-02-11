@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café Pacaembu | Massimo Zanetti Beverage Brasil</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Jost:wght@300;400;500;600;700&family=Figtree:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Raleway:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        /* Specific Styles for Pacaembu Page */
+
+        .pacaembu-wrapper {
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .section-pacaembu-hero {
+            position: relative;
+            width: 100%;
+            line-height: 0;
+        }
+
+        .section-pacaembu-hero img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* About Section (History) */
+        .section-pacaembu-about {
+            position: relative;
+            width: 100%;
+        }
+
+        .about-bg-img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .pacaembu-about-text {
+            position: absolute;
+            top: 25%;
+            left: 13%;
+            width: 38%;
+            color: #5C5B5A;
+            font-family: 'Figtree', sans-serif;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .pacaembu-about-text p {
+            margin-bottom: 25px;
+        }
+
+        .text-bold {
+            font-weight: 700;
+        }
+
+        /* Products Section */
+        .section-pacaembu-products {
+            padding: 80px 20px;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .products-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 3.5rem;
+            color: #5C5B5A;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+        }
+
+        .products-filter {
+            display: inline-flex;
+            align-items: center;
+            border: 1px solid #5C5B5A;
+            padding: 12px 25px;
+            margin-bottom: 80px;
+            cursor: pointer;
+            justify-content: space-between;
+            min-width: 250px;
+        }
+
+        .products-filter span {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 700;
+            font-size: 0.8rem;
+            color: #5C5B5A;
+            letter-spacing: 1.5px;
+        }
+
+        .products-grid {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            flex-wrap: wrap;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            width: 350px;
+            text-align: left;
+        }
+
+        .product-image-container {
+            position: relative;
+            width: 100%;
+            height: 380px;
+            margin-bottom: 30px;
+        }
+
+        /* Image positioning relative to container based on visual estimation of exports */
+        .product-image-container img {
+            position: absolute;
+        }
+
+        /* Tradicional */
+        .prod-tradicional .img-pack {
+            top: 0;
+            left: 15%;
+            width: 70%;
+            z-index: 2;
+        }
+
+        .prod-tradicional .img-detail {
+            top: 35%;
+            left: 15%;
+            width: 28%;
+            z-index: 1;
+        }
+
+        /* Extraforte */
+        .prod-extraforte .img-pack {
+            top: 5%;
+            left: 30%;
+            width: 45%;
+            z-index: 2;
+        }
+
+        .prod-extraforte .img-detail {
+            top: 35%;
+            left: 20%;
+            width: 28%;
+            z-index: 1;
+        }
+
+        /* Gourmet */
+        .prod-gourmet .img-bg {
+            top: 20%;
+            left: 10%;
+            width: 40%;
+            z-index: 1;
+        }
+
+        .prod-gourmet .img-pack {
+            top: 0;
+            left: 25%;
+            width: 35%;
+            z-index: 3;
+        }
+
+        .prod-gourmet .img-pack-small {
+            top: 30%;
+            left: 55%;
+            width: 25%;
+            z-index: 2;
+        }
+
+        .product-name {
+            font-family: 'Figtree', sans-serif;
+            font-weight: 800;
+            font-size: 1.6rem;
+            color: #5C5B5A;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .product-desc {
+            font-family: 'Figtree', sans-serif;
+            font-weight: 400;
+            font-size: 1rem;
+            color: #5C5B5A;
+            line-height: 1.5;
+        }
+
+        .btn-shop-pacaembu {
+            display: inline-flex;
+            background-color: #E96F14;
+            color: #fff;
+            padding: 20px 50px;
+            margin-top: 100px;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 500;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.3s;
+            align-items: center;
+            gap: 15px;
+            border-radius: 0;
+        }
+
+        .btn-shop-pacaembu:hover {
+            background-color: #d15d0d;
+        }
+
+        /* Responsive Fixes */
+        @media (max-width: 992px) {
+            .pacaembu-about-text {
+                position: relative;
+                top: auto;
+                left: auto;
+                width: 100%;
+                padding: 40px 20px;
+                background-color: #fff;
+            }
+
+            .section-pacaembu-about {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .about-bg-img {
+                order: 1;
+                /* Image below text on mobile? Usually image first or text first. Let's put image first. */
+            }
+
+            .section-pacaembu-about {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .products-grid {
+                gap: 60px;
+            }
+
+            .product-card {
+                width: 100%;
+                max-width: 300px;
+                text-align: center;
+            }
+
+            .product-image-container {
+                height: 300px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            /* Simplify layout for mobile if layers break */
+            .product-image-container img {
+                position: absolute;
+                transform: scale(0.9);
+            }
+
+            .products-title {
+                font-size: 2.5rem;
+            }
+
+            .btn-shop-pacaembu {
+                padding: 15px 30px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Layout -->
+    <header class="header">
+        <div class="header-inner">
+            <!-- Left: Navigation -->
+            <nav class="nav-left">
+                <ul>
+                    <li><a href="index.html" class="nav-item">HOME</a></li>
+                    <li class="has-submenu">
+                        <a href="sobre.html" class="nav-item">SOBRE NÓS</a>
+                        <button class="submenu-toggle" aria-label="Toggle Submenu">
+                            <svg width="12" height="7" viewBox="0 0 12 7" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                        <ul class="submenu">
+                            <li><a href="sobre.html">QUEM SOMOS</a></li>
+                            <li><a href="sustentabilidade.html">SUSTENTABILIDADE</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-submenu">
+                        <a href="marcas.html" class="nav-item active-nav">NOSSAS MARCAS</a>
+                        <button class="submenu-toggle" aria-label="Toggle Submenu">
+                            <svg width="12" height="7" viewBox="0 0 12 7" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                        <ul class="submenu">
+                            <li><a href="marcas.html">VISÃO GERAL</a></li>
+                            <li><a href="segafredo.html">SEGAFREDO ZANETTI</a></li>
+                            <li><a href="pacaembu.html">CAFÉ PACAEMBU</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="servicos.html" class="nav-item">SERVIÇOS</a></li>
+                </ul>
+            </nav>
+
+            <!-- Center: Logo -->
+            <div class="logo-container">
+                <a href="index.html">
+                    <img src="assets/images/add.png" alt="Massimo Zanetti Beverage Brasil">
+                </a>
+            </div>
+
+            <!-- Right: Contact -->
+            <div class="nav-right">
+                <a href="contato.html" class="btn-contact">CONTATO</a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-nav-overlay">
+        <nav class="mobile-nav-content">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li class="mobile-has-submenu">
+                    <a href="#">SOBRE NÓS</a>
+                    <ul class="mobile-submenu">
+                        <li><a href="sobre.html">QUEM SOMOS</a></li>
+                        <li><a href="sustentabilidade.html">SUSTENTABILIDADE</a></li>
+                    </ul>
+                </li>
+                <li class="mobile-has-submenu">
+                    <a href="#">NOSSAS MARCAS</a>
+                    <ul class="mobile-submenu">
+                        <li><a href="marcas.html">VISÃO GERAL</a></li>
+                        <li><a href="segafredo.html">SEGAFREDO ZANETTI</a></li>
+                        <li><a href="pacaembu.html">CAFÉ PACAEMBU</a></li>
+                    </ul>
+                </li>
+                <li><a href="servicos.html">SERVIÇOS</a></li>
+                <li><a href="contato.html">CONTATO</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="pacaembu-wrapper">
+
+        <!-- Hero Section -->
+        <section class="section-pacaembu-hero">
+            <img src="assets/images/pacaembu_aae.png" alt="Café Pacaembu">
+        </section>
+
+        <!-- About Section -->
+        <section class="section-pacaembu-about">
+            <img src="assets/images/pacaembu_aac.png" alt="História Pacaembu" class="about-bg-img">
+            <div class="pacaembu-about-text">
+                <p>O Café Pacaembu é uma marca tradicional brasileira, fundada em 1957 por Michel Halla, em Vargem
+                    Grande do Sul, São Paulo.</p>
+                <p>Em 2019, a empresa foi adquirida pelo Massimo Zanetti Beverage Group, com o intuito de expandir sua
+                    presença no mercado brasileiro.</p>
+                <p><span class="text-bold">Com mais de seis décadas de tradição</span>, o Café Pacaembu continua a ser
+                    uma <span class="text-bold">referência</span> no mercado brasileiro, unindo <span
+                        class="text-bold">qualidade, inovação e compromisso</span> com a sustentabilidade em seus
+                    produtos, reciclando 100% do plástico e papelão utilizados nas embalagens e reutilizando a água da
+                    chuva em seu ciclo industrial.</p>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section class="section-pacaembu-products">
+            <h2 class="products-title">PRODUTOS</h2>
+
+            <div class="products-filter">
+                <span>FILTRAR TIPO</span>
+                <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1L5 5L9 1" stroke="#5C5B5A" stroke-width="1.5" />
+                </svg>
+            </div>
+
+            <div class="products-grid">
+                <!-- Tradicional -->
+                <div class="product-card prod-tradicional">
+                    <div class="product-image-container">
+                        <img src="assets/images/pacaembu_aak.png" alt="" class="img-detail">
+                        <img src="assets/images/pacaembu_aaj.png" alt="Linha Tradicional" class="img-pack">
+                    </div>
+                    <h3 class="product-name">LINHA TRADICIONAL</h3>
+                    <p class="product-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin elit nisi,
+                        tempus ut ultricies a, hendrerit non lectus. Phasellus vitae magna tincidunt, lobortis sem eu,
+                        vulputate ligula.</p>
+                </div>
+
+                <!-- Extraforte -->
+                <div class="product-card prod-extraforte">
+                    <div class="product-image-container">
+                        <img src="assets/images/pacaembu_aar.png" alt="" class="img-detail">
+                        <img src="assets/images/pacaembu_aaq.png" alt="Linha Extraforte" class="img-pack">
+                    </div>
+                    <h3 class="product-name">LINHA EXTRAFORTE</h3>
+                    <p class="product-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin elit nisi,
+                        tempus ut ultricies a, hendrerit non lectus. Phasellus vitae magna tincidunt, lobortis sem eu,
+                        vulputate ligula.</p>
+                </div>
+
+                <!-- Espresso Gourmet -->
+                <div class="product-card prod-gourmet">
+                    <div class="product-image-container">
+                        <img src="assets/images/pacaembu_aay.png" alt="" class="img-bg">
+                        <img src="assets/images/pacaembu_aaz.png" alt="Espresso Gourmet" class="img-pack">
+                        <img src="assets/images/pacaembu_abc.png" alt="" class="img-pack-small">
+                    </div>
+                    <h3 class="product-name">ESPRESSO GOURMET</h3>
+                    <p class="product-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin elit nisi,
+                        tempus ut ultricies a, hendrerit non lectus. Phasellus vitae magna tincidunt, lobortis sem eu,
+                        vulputate ligula.</p>
+                </div>
+            </div>
+
+            <a href="https://www.lojasegafredo.com.br/" target="_blank" class="btn-shop-pacaembu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <path d="M16 10a4 4 0 0 1-8 0"></path>
+                </svg>
+                ACESSE A LOJA ONLINE
+            </a>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-logo">
+                <img src="assets/images/add.png" alt="Massimo Zanetti Beverage Brasil">
+            </div>
+            <div class="footer-copy">
+                <p>&copy; 2025 Massimo Zanetti Beverage Brasil. Todos os direitos reservados.</p>
+            </div>
+            <div class="footer-links">
+                <a href="contato.html">CONTATO</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
