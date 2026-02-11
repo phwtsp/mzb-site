@@ -1,28 +1,29 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Menu Toggle Logic for Mobile
     const toggle = document.querySelector('.menu-toggle');
-    const nav = document.querySelector('.nav-left'); // Fixed selector
+    const nav = document.querySelector('.nav-left');
     const body = document.body;
 
     if (toggle && nav) {
         // Toggle Menu
         toggle.addEventListener('click', (e) => {
-            e.stopPropagation(); // Prevent immediate closing
+            e.stopPropagation();
             nav.classList.toggle('active');
             toggle.classList.toggle('open');
             updateHamburgerIcon(toggle);
         });
 
-        // Close when clicking outside
+        // Close when clicking outside specific areas
         document.addEventListener('click', (e) => {
             if (nav.classList.contains('active') && !nav.contains(e.target) && !toggle.contains(e.target)) {
+                // Ensure we don't close if clicking submenu items inside
                 nav.classList.remove('active');
                 toggle.classList.remove('open');
                 updateHamburgerIcon(toggle);
             }
         });
 
-        // Close when clicking a link inside the menu
+        // Close when clicking a link (unless it's a submenu toggle)
         nav.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 nav.classList.remove('active');
@@ -30,6 +31,28 @@ document.addEventListener('DOMContentLoaded', () => {
                 updateHamburgerIcon(toggle);
             });
         });
+
+        // --- PROPER MOBILE SUBMENU LOGIC ---
+        // Select all submenu toggle buttons
+        const submenuToggles = document.querySelectorAll('.submenu-toggle');
+        submenuToggles.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation(); // Prevent closing nav
+
+                // Find parent LI first
+                const parentLi = btn.closest('li');
+                if (parentLi) {
+                    // Find the dropdown menu within this LI
+                    const submenu = parentLi.querySelector('.dropdown-menu');
+
+                    if (submenu) {
+                        submenu.classList.toggle('open');
+                        btn.classList.toggle('active');
+                    }
+                }
+            });
+        });
+
     }
 
     function updateHamburgerIcon(btn) {
@@ -49,9 +72,15 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
+            const targetId = this.getAttribute('href');
+            if (targetId && targetId !== '#') {
+                const target = document.querySelector(targetId);
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            }
         });
     });
 });
