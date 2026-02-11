@@ -2095,3 +2095,38 @@ ul {
         /* Show when open */
     }
 }
+/* --- Custom Overrides --- */
+.footer-blue {
+    background-color: #036398 !important;
+}
+
+.hero-title-custom {
+    text-transform: none !important;
+    font-style: italic;
+}
+
+.italic-certification {
+    font-style: italic;
+}
+
+/* --- Footer Blue Variant --- */
+.footer-blue {
+    background-color: #036398 !important;
+    color: #FFFFFF !important;
+}
+
+.footer-blue p, 
+.footer-blue span, 
+.footer-blue a {
+    color: #FFFFFF !important;
+}
+
+.footer-blue .btn-contact-footer {
+    border-color: #FFFFFF !important;
+    color: #FFFFFF !important;
+}
+
+.footer-blue .btn-contact-footer:hover {
+    background-color: #FFFFFF !important;
+    color: #036398 !important;
+}
