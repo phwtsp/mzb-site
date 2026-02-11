@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Segafredo Zanetti - MZB Brasil</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Figtree:wght@300;400;500;600;700;800;900&family=Raleway:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        /* Page Specific Styles for Segafredo */
+
+        /* Typography specifics similar to reference */
+        .montserrat-bold {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        .jost-regular {
+            font-family: 'Jost', sans-serif;
+            font-weight: 400;
+        }
+
+        /* 1. HERO SECTION */
+        .segafredo-hero {
+            position: relative;
+            width: 100%;
+            height: 90vh;
+            /* Adjust as needed */
+            min-height: 600px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            /* Align content to the right per layout */
+        }
+
+        .segafredo-hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .hero-logo-container {
+            position: absolute;
+            top: 50%;
+            left: 10%;
+            transform: translateY(-50%);
+            z-index: 2;
+        }
+
+        .hero-logo-container img {
+            max-width: 300px;
+            /* Adjust size as needed */
+            height: auto;
+        }
+
+        .segafredo-hero-content {
+            padding-right: 10%;
+            /* Adjust for right alignment */
+            text-align: left;
+            color: #fff;
+            max-width: 600px;
+            z-index: 2;
+        }
+
+        .segafredo-hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 3rem;
+            line-height: 1.2;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .segafredo-hero h2 {
+            font-family: 'Jost', sans-serif;
+            font-weight: 400;
+            font-size: 2.5rem;
+            color: #E42B1B;
+            /* Red color from Segafredo */
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .segafredo-hero p {
+            font-family: 'Figtree', sans-serif;
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        /* 2. HISTORY SECTION (Red Shape) */
+        .section-segafredo-history {
+            position: relative;
+            padding: 100px 0;
+            background-color: #F8F8F8;
+            /* Light grey background */
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .red-shape-container {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 45%;
+            /* Adjust width of the left container */
+            z-index: 1;
+            /* Ensure image is contained and visible */
+            display: flex;
+            align-items: center;
+            /* Center vertically if needed, or top */
+            justify-content: flex-start;
+        }
+
+        .red-shape-img {
+            max-width: 100%;
+            height: 100%;
+            /* Fill the container height */
+            max-height: 100%;
+            object-fit: cover;
+            /* Cover the area, likely cropping sides effectively to fill height */
+            margin-left: 0;
+        }
+
+        .history-content {
+            position: relative;
+            z-index: 2;
+            margin-left: 45%;
+            /* Push text to the right of the image container */
+            max-width: 600px;
+            padding: 0 40px;
+        }
+
+        .history-content p {
+            font-family: 'Figtree', sans-serif;
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #5C5B5A;
+            margin-bottom: 20px;
+        }
+
+        /* 3. MISSION SECTION */
+        .section-segafredo-mission {
+            text-align: center;
+            padding: 80px 0;
+            background-color: #fff;
+        }
+
+        .mission-header {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 2.5rem;
+            color: #5C5B5A;
+            margin-bottom: 50px;
+            text-transform: uppercase;
+            font-weight: 300;
+        }
+
+        .mission-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+            /* No gap per design */
+            width: 100%;
+        }
+
+        .mission-item {
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+            background-color: #000;
+            /* Dark background behind image */
+        }
+
+        .mission-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+            opacity: 0.6;
+            /* Darker image */
+        }
+
+        .mission-item:hover img {
+            transform: scale(1.05);
+            opacity: 0.8;
+            /* Lighter on hover */
+        }
+
+        .mission-text-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /* Centered absolute */
+            width: 100%;
+            text-align: center;
+            color: #fff;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .mission-text-overlay h3 {
+            font-family: 'Figtree', sans-serif;
+            font-weight: 400;
+            /* Regular */
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* 4. PRODUCTS SECTION */
+        .section-segafredo-products {
+            padding: 80px 0;
+            background-color: #F8F8F8;
+            text-align: center;
+        }
+
+        .products-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 3rem;
+            color: #5C5B5A;
+            margin-bottom: 40px;
+        }
+
+        /* Filter Mockup */
+        .products-filter {
+            display: flex;
+            justify-content: flex-end;
+            /* Align right */
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto 40px auto;
+            padding: 0 20px;
+        }
+
+        .filter-btn {
+            border: 1px solid #ccc;
+            background: #fff;
+            padding: 8px 15px;
+            font-family: 'Figtree', sans-serif;
+            font-size: 0.9rem;
+            color: #5C5B5A;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .product-card {
+            background: #fff;
+            padding: 30px;
+            text-align: left;
+            /* Text aligns left */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .product-img-wrapper {
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .product-img-wrapper img {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+        }
+
+        .product-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #1F1A16;
+            /* Dark color */
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .product-card p {
+            font-family: 'Figtree', sans-serif;
+            font-size: 0.9rem;
+            color: #5C5B5A;
+            line-height: 1.5;
+        }
+
+        .btn-shop {
+            display: inline-block;
+            background-color: #E42B1B;
+            color: #fff;
+            padding: 15px 50px;
+            margin-top: 60px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn-shop:hover {
+            background-color: #c02214;
+        }
+
+        @media (max-width: 768px) {
+
+            .mission-grid,
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .red-shape-bg {
+                width: 100%;
+                height: 300px;
+                clip-path: none;
+                position: relative;
+            }
+
+            .section-segafredo-history {
+                padding-top: 0;
+            }
+
+            .history-content {
+                margin-left: 0;
+                padding-top: 40px;
+            }
+
+            .segafredo-hero-content {
+                padding-right: 20px;
+                padding-left: 20px;
+                text-align: center;
+                margin: 0 auto;
+            }
+
+            .segafredo-hero {
+                justify-content: center;
+                flex-direction: column;
+            }
+
+            .hero-logo-container {
+                position: relative;
+                top: auto;
+                left: auto;
+                transform: none;
+                margin-bottom: 20px;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .hero-logo-container img {
+                max-width: 180px;
+                /* Slightly smaller for better proportion */
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Layout -->
+    <header class="header">
+        <div class="header-inner">
+            <!-- Left: Navigation -->
+            <nav class="nav-left">
+                <ul>
+                    <li><a href="index.html" class="nav-item">HOME</a></li>
+                    <li class="has-submenu">
+                        <a href="sobre.html" class="nav-item">SOBRE NÓS</a>
+                        <button class="submenu-toggle" aria-label="Toggle Submenu">
+                            <svg width="12" height="7" viewBox="0 0 12 7" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 1L6 6L11 1" stroke="#808080" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="sobre.html#estrutura-global" class="nav-item">ESTRUTURA GLOBAL</a></li>
+                            <li><a href="sustentabilidade.html" class="nav-item">SUSTENTABILIDADE</a></li>
+                            <li><a href="sustentabilidade.html#certificacoes" class="nav-item">CERTIFICAÇÕES</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-submenu">
+                        <a href="marcas.html" class="nav-item active">NOSSAS MARCAS</a>
+                        <button class="submenu-toggle" aria-label="Toggle Submenu">
+                            <svg width="12" height="7" viewBox="0 0 12 7" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 1L6 6L11 1" stroke="#808080" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="segafredo.html" class="nav-item active">SEGAFREDO ZANETTI</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-submenu">
+                        <a href="#" class="nav-item">SERVIÇOS</a>
+                        <button class="submenu-toggle" aria-label="Toggle Submenu">
+                            <svg width="12" height="7" viewBox="0 0 12 7" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 1L6 6L11 1" stroke="#808080" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="exportacao.html" class="nav-item">EXPORTAÇÃO</a></li>
+                            <li><a href="marcas.html#food-service" class="nav-item">FOOD SERVICE</a></li>
+                            <li><a href="marcas.html#private-label" class="nav-item">PRIVATE LABEL</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Center: Logo (Blue Box) -->
+            <div class="logo-box">
+                <img src="assets/images/add.png" alt="MZB Brasil">
+            </div>
+
+            <!-- Right: Contact -->
+            <div class="contact-right">
+                <a href="#" class="btn-contact">CONTATO</a>
+            </div>
+
+            <!-- Mobile Toggle -->
+            <button class="menu-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- 1. HERO SECTION -->
+        <section class="segafredo-hero">
+            <!-- Background Image: Man drinking coffee (segafredo_hero_man.png) -->
+            <img src="assets/images/segafredo_hero_man.png" alt="Segafredo Background" class="segafredo-hero-bg">
+
+            <!-- Logo on Left -->
+            <div class="hero-logo-container">
+                <img src="assets/images/segafredo_logo_hero.png" alt="Segafredo Zanetti Logo">
+            </div>
+
+            <div class="segafredo-hero-content">
+                <h1>TORNE<br>CADA<br>MOMENTO</h1>
+                <h2>ÚNICO</h2>
+                <p>O legítimo café italiano trazendo mais tradição e sabor para a sua vida.</p>
+            </div>
+        </section>
+
+        <!-- 2. HISTORY SECTION -->
+        <section class="section-segafredo-history">
+            <!-- Red Shape Container -->
+            <div class="red-shape-container">
+                <!-- Using the red shape image -->
+                <img src="assets/images/segafredo_red_shape.png" alt="Segafredo History Shape" class="red-shape-img">
+            </div>
+
+            <div class="history-content">
+                <p>A Segafredo Zanetti nasceu na Itália nos anos 1970, quando Massimo Zanetti comprou a tradicional
+                    torrefação Segafredo, em Bolonha.</p>
+                <p>Sua rica história e marca ganhou força e se expandiu rapidamente. Em pouco tempo, foi consolidada
+                    como sinônimo de café expresso italiano em praticamente todo o mundo.</p>
+                <p>Atualmente, a Segafredo Zanetti é reconhecida como líder no café expresso na Itália e no mundo, com
+                    uma vasta rede de clientes em todos os continentes e com um legado que brilha em cada xícara.</p>
+            </div>
+        </section>
+
+        <!-- 3. MISSION SECTION -->
+        <section class="section-segafredo-mission">
+            <h2 class="mission-header">A MARCA TEM A MISSÃO DE DIFUNDIR:</h2>
+            <div class="mission-grid">
+                <!-- Sabor Italiano -->
+                <div class="mission-item">
+                    <img src="assets/images/segafredo_aax.png" alt="Sabor Italiano">
+                    <div class="mission-text-overlay">
+                        <h3>SABOR<br>ITALIANO</h3>
+                    </div>
+                </div>
+                <!-- Cultura -->
+                <div class="mission-item">
+                    <img src="assets/images/segafredo_abc.png" alt="Cultura">
+                    <div class="mission-text-overlay">
+                        <h3>CULTURA</h3>
+                    </div>
+                </div>
+                <!-- Preparação -->
+                <div class="mission-item">
+                    <img src="assets/images/segafredo_abh.png" alt="Preparação do Verdadeiro Espresso">
+                    <div class="mission-text-overlay">
+                        <h3>PREPARAÇÃO DO<br>VERDADEIRO EXPRESSO</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. PRODUCTS SECTION -->
+        <section class="section-segafredo-products">
+            <h2 class="products-title">PRODUTOS</h2>
+
+            <div class="products-filter">
+                <button class="filter-btn">FILTRAR USO <svg width="10" height="6" viewBox="0 0 10 6" fill="none">
+                        <path d="M1 1L5 5L9 1" stroke="#5C5B5A" />
+                    </svg></button>
+                <button class="filter-btn">FILTRAR TIPO <svg width="10" height="6" viewBox="0 0 10 6" fill="none">
+                        <path d="M1 1L5 5L9 1" stroke="#5C5B5A" />
+                    </svg></button>
+            </div>
+
+            <div class="products-grid">
+                <!-- Product 1: ESPRESSO CASA -->
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="assets/images/segafredo_abz.png" alt="Espresso Casa">
+                    </div>
+                    <h3>ESPRESSO CASA</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis elit. Ut id ex a
+                        hendrerit non lectus. Phasellus a lacus eget leo varius tristique quis id vulputate ligula.</p>
+                </div>
+
+                <!-- Product 2: INTERMEZZO -->
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="assets/images/segafredo_aca.png" alt="Intermezzo">
+                    </div>
+                    <h3>INTERMEZZO</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis elit. Ut id ex a
+                        hendrerit non lectus. Phasellus a lacus eget leo varius tristique quis id vulputate ligula.</p>
+                </div>
+
+                <!-- Product 3: SELECTION (Black Bag) -->
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="assets/images/segafredo_acg.png" alt="Selection">
+                    </div>
+                    <h3>SELECTION</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis elit. Ut id ex a
+                        hendrerit non lectus. Phasellus a lacus eget leo varius tristique quis id vulputate ligula.</p>
+                </div>
+
+                <!-- Product 4: SELECTION (Black Bag) -->
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="assets/images/segafredo_ach.png" alt="Selection">
+                    </div>
+                    <h3>SELECTION</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis elit. Ut id ex a
+                        hendrerit non lectus. Phasellus a lacus eget leo varius tristique quis id vulputate ligula.</p>
+                </div>
+
+                <!-- Product 5: ESPRESSO ITALIANO -->
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="assets/images/segafredo_acn.png" alt="Espresso Italiano">
+                    </div>
+                    <h3>ESPRESSO ITALIANO</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis elit. Ut id ex a
+                        hendrerit non lectus. Phasellus a lacus eget leo varius tristique quis id vulputate ligula.</p>
+                </div>
+
+                <!-- Product 6: MASSIMO -->
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="assets/images/segafredo_aco.png" alt="Massimo">
+                    </div>
+                    <h3>MASSIMO</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis elit. Ut id ex a
+                        hendrerit non lectus. Phasellus a lacus eget leo varius tristique quis id vulputate ligula.</p>
+                </div>
+            </div>
+
+            <a href="https://www.lojasegafredo.com.br/" target="_blank" class="btn-shop" style="text-decoration: none;">
+                <span style="font-size: 1.2rem; vertical-align: middle; margin-right: 10px;">🛒</span> ACESSE A LOJA
+                ONLINE</a>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer footer-blue">
+        <div class="footer-container">
+            <div class="copyright">
+                <p>@2025 Massimo Zanetti Beverage Brasil.</p>
+                <p class="rights">Todos os direitos reservados.</p>
+            </div>
+            <div class="footer-center">
+                <img src="assets/images/Logo_Menu.png" alt="MZB">
+            </div>
+            <div class="footer-right">
+                <a href="#" class="btn-contact-footer">CONTATO</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
