@@ -2585,13 +2585,26 @@ ul {
         gap: 30px;
     }
 
+    .full-width-image-container {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .bg-img-cover {
+        height: 300px;
+        min-height: 300px;
+    }
+
     .overlay-box-blue {
         position: relative;
         right: auto;
         top: auto;
         transform: none;
         max-width: 100%;
-        margin-top: -50px;
+        margin-top: 0;
+        width: 100%;
+        padding: 40px 20px;
     }
 
     .private-label-split {
