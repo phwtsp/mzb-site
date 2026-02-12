@@ -69,8 +69,16 @@
         /* Products Section */
         .section-pacaembu-products {
             padding: 80px 20px;
-            background-color: #fff;
+            background-color: #f5f5f5;
             text-align: center;
+        }
+
+        .products-header-actions {
+            max-width: 1400px;
+            margin: 0 auto 40px auto;
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 20px;
         }
 
         .products-title {
@@ -86,41 +94,49 @@
         .products-filter {
             display: inline-flex;
             align-items: center;
-            border: 1px solid #5C5B5A;
-            padding: 12px 25px;
-            margin-bottom: 80px;
-            cursor: pointer;
             justify-content: space-between;
-            min-width: 250px;
+            border: 1px solid #5C5B5A;
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: transparent;
+            min-width: 180px;
+            margin-bottom: 0;
         }
 
         .products-filter span {
             font-family: 'Raleway', sans-serif;
             font-weight: 700;
-            font-size: 0.8rem;
+            font-size: 0.7rem;
             color: #5C5B5A;
             letter-spacing: 1.5px;
+            text-transform: uppercase;
         }
 
         .products-grid {
             display: flex;
             justify-content: center;
-            gap: 60px;
+            gap: 30px;
             flex-wrap: wrap;
             max-width: 1400px;
             margin: 0 auto;
         }
 
         .product-card {
-            width: 350px;
+            width: 380px;
             text-align: left;
+            background-color: #ffffff;
+            padding: 0 40px 50px 40px;
+            display: flex;
+            flex-direction: column;
         }
 
         .product-image-container {
             position: relative;
             width: 100%;
-            height: 380px;
-            margin-bottom: 30px;
+            height: 350px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
         }
 
         /* Image positioning relative to container based on visual estimation of exports */
@@ -183,7 +199,7 @@
         .product-name {
             font-family: 'Figtree', sans-serif;
             font-weight: 800;
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             color: #5C5B5A;
             margin-bottom: 15px;
             text-transform: uppercase;
@@ -191,9 +207,9 @@
 
         .product-desc {
             font-family: 'Figtree', sans-serif;
-            font-weight: 400;
-            font-size: 1rem;
-            color: #5C5B5A;
+            font-weight: 300;
+            font-size: 0.95rem;
+            color: #777;
             line-height: 1.5;
         }
 
@@ -201,11 +217,11 @@
             display: inline-flex;
             background-color: #E96F14;
             color: #fff;
-            padding: 20px 50px;
-            margin-top: 100px;
+            padding: 15px 40px;
+            margin-top: 60px;
             font-family: 'Raleway', sans-serif;
-            font-weight: 500;
-            font-size: 1rem;
+            font-weight: 700;
+            font-size: 0.9rem;
             text-transform: uppercase;
             letter-spacing: 1.5px;
             border: none;
@@ -400,11 +416,13 @@
         <section class="section-pacaembu-products">
             <h2 class="products-title">PRODUTOS</h2>
 
-            <div class="products-filter">
-                <span>FILTRAR TIPO</span>
-                <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 1L5 5L9 1" stroke="#5C5B5A" stroke-width="1.5" />
-                </svg>
+            <div class="products-header-actions">
+                <div class="products-filter">
+                    <span>FILTRAR TIPO</span>
+                    <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1L5 5L9 1" stroke="#5C5B5A" stroke-width="1.5" />
+                    </svg>
+                </div>
             </div>
 
             <div class="products-grid">
@@ -447,11 +465,9 @@
             </div>
 
             <a href="https://www.lojasegafredo.com.br/" target="_blank" class="btn-shop-pacaembu">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
-                    <line x1="3" y1="6" x2="21" y2="6"></line>
-                    <path d="M16 10a4 4 0 0 1-8 0"></path>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M7 18C5.9 18 5.01 18.9 5.01 20C5.01 21.1 5.9 22 7 22C8.1 22 9 21.1 9 20C9 18.9 8.1 18 7 18ZM17 18C15.9 18 15.01 18.9 15.01 20C15.01 21.1 15.9 22 17 22C18.1 22 19 21.1 19 20C19 18.9 18.1 18 17 18ZM7.17 14.75L7.2 14.63L8.1 13H15.55C16.3 13 16.96 12.59 17.3 11.97L21.16 4.96L19.42 4H19.41L18.31 6L15.55 11H8.53L8.4 10.73L6.16 6L5.21 4L4.27 2H1V4H3L6.6 11.59L5.25 14.04C5.09 14.32 5 14.65 5 15C5 16.1 5.9 17 7 17H19V15H7.42C7.29 15 7.17 14.89 7.17 14.75Z" />
                 </svg>
                 ACESSE A LOJA ONLINE
             </a>
