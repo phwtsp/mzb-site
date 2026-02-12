@@ -94,47 +94,140 @@
         }
 
         /* Products Section */
+        /* Products Section */
         .section-novasuissa-products {
             padding: 80px 20px;
-            background-color: #fff;
+            background-color: #f5f5f5;
+            /* Light grey background */
             text-align: center;
+        }
+
+        .products-title-ns {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 3rem;
+            color: #5C5B5A;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            font-weight: 400;
+        }
+
+        .novasuissa-products-header {
+            display: flex;
+            justify-content: space-between;
+            /* If there were title left and filter right, but here title is centered typically */
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto 40px;
+            position: relative;
+        }
+
+        /* Filter button styling matching Pacaembu */
+        .products-filter-ns {
+            /* Position absolute right or flex? visual shows title centered, filter right. 
+                Let's make a container relative. */
+            position: absolute;
+            right: 0;
+            top: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border: 1px solid #5C5B5A;
+            padding: 8px 16px;
+            cursor: pointer;
+            font-family: 'Figtree', sans-serif;
+            font-size: 0.8rem;
+            color: #5C5B5A;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            background: transparent;
         }
 
         .novasuissa-products-grid {
             display: flex;
             justify-content: center;
-            gap: 40px;
+            gap: 30px;
             flex-wrap: wrap;
             max-width: 1200px;
             margin: 0 auto;
         }
 
         .novasuissa-product-card {
-            width: 45%;
-            max-width: 500px;
-            text-align: left;
+            width: 48%;
+            /* Two columns */
+            max-width: 550px;
+            background-color: #fff;
+            padding: 40px 30px;
+            text-align: center;
+            /* Center image */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* Centered content */
         }
 
         .novasuissa-product-img {
-            width: 100%;
+            max-width: 80%;
             height: auto;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
+            object-fit: contain;
+        }
+
+        .novasuissa-product-info {
+            text-align: left;
+            /* Text left aligned inside card as per likely design pattern or center? 
+                               Screenshot shows: "LINHA TRADICIONAL" left aligned relative to text block? 
+                               Actually looks like EVERYTHING is left aligned relative to the text block, 
+                               but the block is centered? Or simply left aligned. 
+                               Looking closely at crop 4: Title "LINHA TRADICIONAL" is left aligned with the text below it. 
+                               The image is centered above. */
+            width: 100%;
         }
 
         .novasuissa-product-title {
             font-family: 'Figtree', sans-serif;
             font-weight: 800;
-            font-size: 1.8rem;
+            /* ExtraBold */
+            font-size: 1.5rem;
             color: #5C5B5A;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             text-transform: uppercase;
+            text-align: left;
         }
 
         .novasuissa-product-desc {
             font-family: 'Figtree', sans-serif;
+            font-size: 0.95rem;
+            color: #5C5B5A;
+            line-height: 1.6;
+            text-align: left;
+        }
+
+        .novasuissa-bottom-text {
+            max-width: 800px;
+            margin: 60px auto 0;
+            font-family: 'Figtree', sans-serif;
             font-size: 1rem;
             color: #5C5B5A;
-            line-height: 1.5;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .novasuissa-product-card {
+                width: 100%;
+            }
+
+            .products-filter-ns {
+                position: static;
+                margin: 0 auto 20px;
+                width: fit-content;
+            }
+
+            .novasuissa-products-header {
+                flex-direction: column;
+            }
         }
 
         /* Mobile adjust */
@@ -262,29 +355,58 @@
 
         <!-- Products Section -->
         <section class="section-novasuissa-products">
+            <h2 class="products-title-ns">PRODUTOS</h2>
+
+            <div class="novasuissa-products-header">
+                <!-- Filter Button -->
+                <div class="products-filter-ns">
+                    <span>FILTRAR TIPO</span>
+                    <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1L5 5L9 1" stroke="#5C5B5A" stroke-width="1.5" />
+                    </svg>
+                </div>
+            </div>
+
             <div class="novasuissa-products-grid">
                 <!-- Tradicional -->
                 <div class="novasuissa-product-card">
-                    <img src="assets/images/novasuissa_prod_tradicional.png" alt="Nova Suissa Tradicional"
+                    <!-- Using the product pack image. Assuming the previously set "pack" image or trying to use the one from the directory if named nicely. 
+                         Previous command Step 797 attempted to copy 'aao.png' -> 'novasuissa_prod_extraforte_pack.png' and others.
+                         Actually, let's assume 'novasuissa_prod_tradicional.png' is the one we have, or if it isn't the pack, I might need to swap.
+                         User screenshot shows packs. 
+                         I will stick to the existing referenced images but be mindful they might need update if they are single bags. 
+                         I will check if I can assume they are packs. -->
+                    <img src="assets/images/novasuissa_prod_tradicional.png" alt="Linha Tradicional"
                         class="novasuissa-product-img">
-                    <h3 class="novasuissa-product-title">TRADICIONAL</h3>
-                    <p class="novasuissa-product-desc">
-                        O café Tradicional Nova Suissa traz o equilíbrio perfeito para o dia a dia, com sabor encorpado
-                        e aroma envolvente que resgata as melhores lembranças.
-                    </p>
+                    <div class="novasuissa-product-info">
+                        <h3 class="novasuissa-product-title">LINHA TRADICIONAL</h3>
+                        <p class="novasuissa-product-desc">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin elit nisi, tempus ut
+                            ultricies a, hendrerit non lectus. Phasellus vitae magna tincidunt, lobortis sem eu,
+                            vulputate ligula.
+                        </p>
+                    </div>
                 </div>
 
                 <!-- Extra Forte -->
                 <div class="novasuissa-product-card">
-                    <img src="assets/images/novasuissa_prod_extraforte.png" alt="Nova Suissa Extra Forte"
+                    <img src="assets/images/novasuissa_prod_extraforte.png" alt="Linha Extraforte"
                         class="novasuissa-product-img">
-                    <h3 class="novasuissa-product-title">EXTRA FORTE</h3>
-                    <p class="novasuissa-product-desc">
-                        Para quem prefere uma experiência mais intensa, o Extra Forte oferece um café potente, com torra
-                        acentuada e sabor marcante.
-                    </p>
+                    <div class="novasuissa-product-info">
+                        <h3 class="novasuissa-product-title">LINHA EXTRAFORTE</h3>
+                        <p class="novasuissa-product-desc">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin elit nisi, tempus ut
+                            ultricies a, hendrerit non lectus. Phasellus vitae magna tincidunt, lobortis sem eu,
+                            vulputate ligula.
+                        </p>
+                    </div>
                 </div>
             </div>
+
+            <p class="novasuissa-bottom-text">
+                O portfólio de produtos do Café Nova Suíssa possui diferentes tipos de café torrado e moído, incluindo
+                as opções Tradicional e Extra Forte, ambas comercializadas em embalagens de 500g.
+            </p>
         </section>
     </main>
 
