@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café Nova Suissa | Massimo Zanetti Beverage Brasil</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Figtree:wght@300;400;500;600;700;800;900&family=Raleway:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        /* Nova Suissa Specific Styles */
+
+        /* Hero Section */
+        .section-novasuissa-hero {
+            position: relative;
+            width: 100%;
+            height: 60vh;
+            /* Adjust as needed */
+            min-height: 500px;
+            background-image: url('assets/images/novasuissa_hero.png');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            /* Left aligned based on layout */
+            padding-left: 10%;
+        }
+
+        .novasuissa-hero-text {
+            color: #fff;
+            max-width: 500px;
+        }
+
+        .novasuissa-hero-title {
+            font-family: 'Figtree', sans-serif;
+            font-weight: 400;
+            font-size: 1.5rem;
+            /* Adjust based on layout */
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            line-height: 1.4;
+        }
+
+        /* Intro Section with Background Image */
+        .section-novasuissa-intro {
+            position: relative;
+            width: 100%;
+            padding: 80px 20px;
+            background-image: url('assets/images/novasuissa_mid_bg_fixed.png');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            color: #5C5B5A;
+        }
+
+        .novasuissa-intro-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.9);
+            /* Adding a slight overlay for readability if needed, checking export */
+            /* Actually export shows transparency, maybe no bg color on text box */
+            background-color: transparent;
+        }
+
+        .novasuissa-intro-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 3.5rem;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            color: #5C5B5A;
+        }
+
+        .novasuissa-intro-text {
+            font-family: 'Figtree', sans-serif;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .novasuissa-highlight {
+            font-family: 'Figtree', sans-serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #036398;
+            /* Blue from export #abf */
+            margin-top: 40px;
+            display: block;
+        }
+
+        /* Products Section */
+        .section-novasuissa-products {
+            padding: 80px 20px;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .novasuissa-products-grid {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .novasuissa-product-card {
+            width: 45%;
+            max-width: 500px;
+            text-align: left;
+        }
+
+        .novasuissa-product-img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .novasuissa-product-title {
+            font-family: 'Figtree', sans-serif;
+            font-weight: 800;
+            font-size: 1.8rem;
+            color: #5C5B5A;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .novasuissa-product-desc {
+            font-family: 'Figtree', sans-serif;
+            font-size: 1rem;
+            color: #5C5B5A;
+            line-height: 1.5;
+        }
+
+        /* Contact Section specific to Nova Suissa if needed, reusing footer */
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Layout: White Bar with Center Blue Logo Box -->
+    <header class="header">
+        <div class="header-inner">
+            <!-- Left: Navigation -->
+            <nav class="nav-left">
+                <ul>
+                    <li><a href="index.html" class="nav-item">HOME</a></li>
+                    <li class="has-submenu">
+                        <a href="sobre.html" class="nav-item">SOBRE NÓS</a>
+                        <button class="submenu-toggle" aria-label="Toggle Submenu">
+                            <svg width="12" height="7" viewBox="0 0 12 7" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 1L6 6L11 1" stroke="#808080" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="sobre.html#estrutura-global" class="nav-item">ESTRUTURA GLOBAL</a></li>
+                            <li><a href="sustentabilidade.html" class="nav-item">SUSTENTABILIDADE</a></li>
+                            <li><a href="sustentabilidade.html#certificacoes" class="nav-item">CERTIFICAÇÕES</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-submenu">
+                        <a href="marcas.html" class="nav-item active">NOSSAS MARCAS</a>
+                        <button class="submenu-toggle" aria-label="Toggle Submenu">
+                            <svg width="12" height="7" viewBox="0 0 12 7" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 1L6 6L11 1" stroke="#808080" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="segafredo.html" class="nav-item">SEGAFREDO ZANETTI</a></li>
+                            <li><a href="pacaembu.html" class="nav-item">CAFÉ PACAEMBU</a></li>
+                            <li><a href="novasuissa.html" class="nav-item active">NOVA SUISSA</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-submenu">
+                        <a href="#" class="nav-item">SERVIÇOS</a>
+                        <button class="submenu-toggle" aria-label="Toggle Submenu">
+                            <svg width="12" height="7" viewBox="0 0 12 7" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 1L6 6L11 1" stroke="#808080" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="exportacao.html" class="nav-item">EXPORTAÇÃO</a></li>
+                            <li><a href="marcas.html#food-service" class="nav-item">FOOD SERVICE</a></li>
+                            <li><a href="marcas.html#private-label" class="nav-item">PRIVATE LABEL</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Center: Logo (Blue Box) -->
+            <div class="logo-box">
+                <a href="index.html"><img src="assets/images/add.png" alt="MZB Brasil"></a>
+            </div>
+
+            <!-- Right: Contact -->
+            <div class="contact-right">
+                <a href="contato.html" class="btn-contact">CONTATO</a>
+            </div>
+
+            <!-- Mobile Toggle -->
+            <button class="menu-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="section-novasuissa-hero">
+            <div class="novasuissa-hero-text">
+                <h1 class="novasuissa-hero-title">SABORES QUE CONECTAM</h1>
+            </div>
+        </section>
+
+        <!-- Intro Section -->
+        <section class="section-novasuissa-intro">
+            <div class="novasuissa-intro-content">
+                <h2 class="novasuissa-intro-title">TRADIÇÃO EM CAFÉ</h2>
+                <p class="novasuissa-intro-text">
+                    Uma marca forte e de qualidade. O café feito para quem valoriza a simplicidade com sabor e aroma
+                    marcantes.
+                </p>
+                <div class="novasuissa-highlight">
+                    A Nova Suissa é sinônimo de tradição e afeto.
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section class="section-novasuissa-products">
+            <div class="novasuissa-products-grid">
+                <!-- Tradicional -->
+                <div class="novasuissa-product-card">
+                    <img src="assets/images/novasuissa_prod_tradicional.png" alt="Nova Suissa Tradicional"
+                        class="novasuissa-product-img">
+                    <h3 class="novasuissa-product-title">TRADICIONAL</h3>
+                    <p class="novasuissa-product-desc">
+                        O café Tradicional Nova Suissa traz o equilíbrio perfeito para o dia a dia, com sabor encorpado
+                        e aroma envolvente que resgata as melhores lembranças.
+                    </p>
+                </div>
+
+                <!-- Extra Forte -->
+                <div class="novasuissa-product-card">
+                    <img src="assets/images/novasuissa_prod_extraforte.png" alt="Nova Suissa Extra Forte"
+                        class="novasuissa-product-img">
+                    <h3 class="novasuissa-product-title">EXTRA FORTE</h3>
+                    <p class="novasuissa-product-desc">
+                        Para quem prefere uma experiência mais intensa, o Extra Forte oferece um café potente, com torra
+                        acentuada e sabor marcante.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer footer-blue">
+        <!-- Assuming footer-blue fits branding, checking index.ts uses plain footer usually, but segafredo/pacaembu use blue? Let's check styling. Index uses .footer. Pacaembu uses .footer-blue. Nova Suissa has blue accents, so likely blue footer. -->
+        <div class="footer-container">
+            <div class="copyright">
+                <p>@2025 Massimo Zanetti Beverage Brasil.</p>
+                <p class="rights">Todos os direitos reservados.</p>
+            </div>
+            <div class="footer-center">
+                <img src="assets/images/Logo_Menu.png" alt="MZB">
+            </div>
+            <div class="footer-right">
+                <a href="contato.html" class="btn-contact-footer">CONTATO</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
