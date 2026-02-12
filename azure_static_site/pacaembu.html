@@ -301,7 +301,7 @@
 
 <body>
 
-    <!-- Header Layout -->
+    <!-- Header Layout: White Bar with Center Blue Logo Box -->
     <header class="header">
         <div class="header-inner">
             <!-- Left: Navigation -->
@@ -313,80 +313,66 @@
                         <button class="submenu-toggle" aria-label="Toggle Submenu">
                             <svg width="12" height="7" viewBox="0 0 12 7" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                <path d="M1 1L6 6L11 1" stroke="#808080" stroke-width="1.5" stroke-linecap="round"
                                     stroke-linejoin="round" />
                             </svg>
                         </button>
-                        <ul class="submenu">
-                            <li><a href="sobre.html">QUEM SOMOS</a></li>
-                            <li><a href="sustentabilidade.html">SUSTENTABILIDADE</a></li>
+                        <ul class="dropdown-menu">
+                            <li><a href="sobre.html#estrutura-global" class="nav-item">ESTRUTURA GLOBAL</a></li>
+                            <li><a href="sustentabilidade.html" class="nav-item">SUSTENTABILIDADE</a></li>
+                            <li><a href="sustentabilidade.html#certificacoes" class="nav-item">CERTIFICAÇÕES</a></li>
                         </ul>
                     </li>
                     <li class="has-submenu">
-                        <a href="marcas.html" class="nav-item active-nav">NOSSAS MARCAS</a>
+                        <a href="marcas.html" class="nav-item active">NOSSAS MARCAS</a>
                         <button class="submenu-toggle" aria-label="Toggle Submenu">
                             <svg width="12" height="7" viewBox="0 0 12 7" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                <path d="M1 1L6 6L11 1" stroke="#808080" stroke-width="1.5" stroke-linecap="round"
                                     stroke-linejoin="round" />
                             </svg>
                         </button>
-                        <ul class="submenu">
-                            <li><a href="marcas.html">VISÃO GERAL</a></li>
-                            <li><a href="segafredo.html">SEGAFREDO ZANETTI</a></li>
-                            <li><a href="pacaembu.html">CAFÉ PACAEMBU</a></li>
+                        <ul class="dropdown-menu">
+                            <li><a href="segafredo.html" class="nav-item">SEGAFREDO ZANETTI</a></li>
+                            <li><a href="pacaembu.html" class="nav-item active">CAFÉ PACAEMBU</a></li>
                         </ul>
                     </li>
-                    <li><a href="servicos.html" class="nav-item">SERVIÇOS</a></li>
+                    <li class="has-submenu">
+                        <a href="#" class="nav-item">SERVIÇOS</a>
+                        <button class="submenu-toggle" aria-label="Toggle Submenu">
+                            <svg width="12" height="7" viewBox="0 0 12 7" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 1L6 6L11 1" stroke="#808080" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="exportacao.html" class="nav-item">EXPORTAÇÃO</a></li>
+                            <li><a href="marcas.html#food-service" class="nav-item">FOOD SERVICE</a></li>
+                            <li><a href="marcas.html#private-label" class="nav-item">PRIVATE LABEL</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </nav>
 
-            <!-- Center: Logo -->
+            <!-- Center: Logo (Blue Box) -->
             <div class="logo-box">
-                <a href="index.html">
-                    <img src="assets/images/add.png" alt="Massimo Zanetti Beverage Brasil">
-                </a>
+                <a href="index.html"><img src="assets/images/add.png" alt="MZB Brasil"></a>
             </div>
 
             <!-- Right: Contact -->
-            <div class="nav-right">
+            <div class="contact-right">
                 <a href="contato.html" class="btn-contact">CONTATO</a>
             </div>
 
-            <!-- Mobile Menu Toggle -->
-            <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+            <!-- Mobile Toggle -->
+            <button class="menu-toggle" aria-label="Menu">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
         </div>
     </header>
-
-    <!-- Mobile Navigation Overlay -->
-    <div class="mobile-nav-overlay">
-        <nav class="mobile-nav-content">
-            <ul>
-                <li><a href="index.html">HOME</a></li>
-                <li class="mobile-has-submenu">
-                    <a href="#">SOBRE NÓS</a>
-                    <ul class="mobile-submenu">
-                        <li><a href="sobre.html">QUEM SOMOS</a></li>
-                        <li><a href="sustentabilidade.html">SUSTENTABILIDADE</a></li>
-                    </ul>
-                </li>
-                <li class="mobile-has-submenu">
-                    <a href="#">NOSSAS MARCAS</a>
-                    <ul class="mobile-submenu">
-                        <li><a href="marcas.html">VISÃO GERAL</a></li>
-                        <li><a href="segafredo.html">SEGAFREDO ZANETTI</a></li>
-                        <li><a href="pacaembu.html">CAFÉ PACAEMBU</a></li>
-                    </ul>
-                </li>
-                <li><a href="servicos.html">SERVIÇOS</a></li>
-                <li><a href="contato.html">CONTATO</a></li>
-            </ul>
-        </nav>
-    </div>
 
     <!-- MAIN CONTENT -->
     <div class="pacaembu-wrapper">
