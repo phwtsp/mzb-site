@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tradição, Grão da Terra e Itambé - MZB Brasil</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Figtree:wght@300;400;500;600;700;800;900&family=Raleway:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        /* PROPRIETARY PAGE STYLES */
+        body {
+            background-color: #f2f2f2;
+            /* Exact color from export */
+            overflow-x: hidden;
+        }
+
+        main {
+            padding-top: 0;
+        }
+
+        /* Typography */
+        h2.brand-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 40px;
+            font-style: italic;
+            color: #5C5B5A;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .section-title-products {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 36px;
+            font-style: italic;
+            color: #5C5B5A;
+            text-align: center;
+            margin: 40px 0;
+            text-transform: uppercase;
+        }
+
+        .text-content {
+            font-family: 'Figtree', sans-serif;
+            font-size: 18px;
+            line-height: 1.6;
+            color: #5C5B5A;
+        }
+
+        /* Cards */
+        .product-card {
+            background: #fff;
+            border: 1px solid #eee;
+            padding: 30px;
+            text-align: left;
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Specific Layouts */
+        .tig-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* HERO SECTION */
+        .hero-tig {
+            width: 100%;
+            overflow: hidden;
+            margin-bottom: 60px;
+        }
+
+        .hero-tig img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* TRADICAO SECTION */
+        .tradicao-section {
+            margin-bottom: 100px;
+        }
+
+        .tradicao-intro {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 60px;
+            margin-bottom: 60px;
+            flex-wrap: wrap;
+        }
+
+        .tradicao-text-block {
+            max-width: 400px;
+        }
+
+        .tradicao-logo {
+            max-width: 300px;
+            margin-bottom: 30px;
+        }
+
+        .tradicao-trio-img {
+            max-width: 600px;
+            width: 100%;
+        }
+
+        /* Product Grid */
+        .products-grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .card-img {
+            height: 300px;
+            object-fit: contain;
+            margin-bottom: 25px;
+        }
+
+        .card-title {
+            font-family: 'Figtree', sans-serif;
+            font-weight: 800;
+            font-size: 20px;
+            color: #5C5B5A;
+            margin-bottom: 15px;
+            align-self: flex-start;
+        }
+
+        .card-desc {
+            font-family: 'Figtree', sans-serif;
+            font-size: 16px;
+            color: #5C5B5A;
+            line-height: 1.5;
+            align-self: flex-start;
+        }
+
+        /* GRAO DA TERRA SECTION */
+        .grao-section {
+            background-color: #fff;
+            padding: 80px 0;
+            margin-bottom: 100px;
+        }
+
+        .grao-content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        /* Left Col */
+        .grao-left-col {
+            padding-right: 20px;
+        }
+
+        .grao-logo {
+            width: 280px;
+            margin-bottom: 40px;
+            display: block;
+        }
+
+        /* Right Col (Product Box) */
+        .grao-product-box {
+            background-color: #f2f2f2;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            /* Align text left */
+            justify-content: center;
+            height: 100%;
+        }
+
+        .grao-prod-img {
+            width: 100%;
+            max-width: 350px;
+            height: auto;
+            margin: 0 auto 30px auto;
+            /* Center image horizontally in box */
+            display: block;
+        }
+
+        .grao-prod-info {
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .grao-content-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .grao-left-col {
+                padding-right: 0;
+                text-align: center;
+            }
+
+            .grao-logo {
+                margin: 0 auto 30px auto;
+            }
+
+            .grao-product-box {
+                align-items: center;
+                text-align: center;
+            }
+        }
+
+        /* ITAMBE SECTION */
+        .itambe-section {
+            padding-bottom: 100px;
+        }
+
+        .itambe-content {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            flex-wrap: wrap;
+            margin-bottom: 60px;
+        }
+
+        .itambe-img-col {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .itambe-text-col {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            main {
+                padding-top: 80px;
+            }
+
+            .tradicao-intro,
+            .grao-content,
+            .itambe-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 40px;
+            }
+
+            .card-title,
+            .card-desc {
+                align-self: center;
+                text-align: center;
+            }
+
+            .tradicao-logo {
+                margin: 0 auto 30px auto;
+            }
+
+            .itambe-content {
+                flex-direction: column-reverse;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="header-inner">
+            <!-- Left: Navigation -->
+            <nav class="nav-left">
+                <ul>
+                    <li><a href="index.html" class="nav-item">HOME</a></li>
+                    <li class="has-submenu">
+                        <a href="sobre.html" class="nav-item">SOBRE NÓS</a>
+                        <button class="submenu-toggle" aria-label="Toggle Submenu">
+                            <svg width="12" height="7" viewBox="0 0 12 7" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 1L6 6L11 1" stroke="#808080" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="sobre.html#estrutura-global" class="nav-item">ESTRUTURA GLOBAL</a></li>
+                            <li><a href="sustentabilidade.html" class="nav-item">SUSTENTABILIDADE</a></li>
+                            <li><a href="sustentabilidade.html#certificacoes" class="nav-item">CERTIFICAÇÕES</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-submenu">
+                        <a href="marcas.html" class="nav-item">NOSSAS MARCAS</a>
+                        <button class="submenu-toggle" aria-label="Toggle Submenu">
+                            <svg width="12" height="7" viewBox="0 0 12 7" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 1L6 6L11 1" stroke="#808080" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="segafredo.html" class="nav-item">SEGAFREDO ZANETTI</a></li>
+                            <li><a href="pacaembu.html" class="nav-item">CAFÉ PACAEMBU</a></li>
+                            <li><a href="novasuissa.html" class="nav-item">NOVA SUISSA</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-submenu">
+                        <a href="#" class="nav-item">SERVIÇOS</a>
+                        <button class="submenu-toggle" aria-label="Toggle Submenu">
+                            <svg width="12" height="7" viewBox="0 0 12 7" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 1L6 6L11 1" stroke="#808080" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="exportacao.html" class="nav-item">EXPORTAÇÃO</a></li>
+                            <li><a href="marcas.html#food-service" class="nav-item">FOOD SERVICE</a></li>
+                            <li><a href="marcas.html#private-label" class="nav-item">PRIVATE LABEL</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Center: Logo (Blue Box) -->
+            <div class="logo-box">
+                <img src="assets/images/add.png" alt="MZB Brasil">
+            </div>
+
+            <!-- Right: Contact -->
+            <div class="contact-right">
+                <a href="contato.html" class="btn-contact">CONTATO</a>
+            </div>
+
+            <!-- Mobile Toggle -->
+            <button class="menu-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- HERO -->
+        <section class="hero-tig">
+            <!-- Using the hero image mapped from aad.png -->
+            <img src="assets/images/tig_tradicao_hero.png" alt="Tradição, Grão da Terra e Itambé">
+        </section>
+
+        <div class="tig-container">
+
+            <!-- TRADIÇÃO BRAND -->
+            <section class="tradicao-section">
+                <div class="tradicao-intro">
+                    <div class="tradicao-text-block">
+                        <img src="assets/images/tig_tradicao_logo.png" alt="Café Tradição" class="tradicao-logo">
+                        <p class="text-content">
+                            O Café Tradição é uma marca voltada para consumidores que apreciam um café de sabor mais
+                            intenso e encorpado.
+                        </p>
+                    </div>
+                    <div class="tradicao-trio-img">
+                        <img src="assets/images/tig_tradicao_intro.png" alt="Linha Tradição" style="width:100%">
+                    </div>
+                </div>
+
+                <h2 class="section-title-products">PRODUTOS</h2>
+
+                <div class="products-grid-2">
+                    <!-- Tradicional -->
+                    <div class="product-card">
+                        <img src="assets/images/tig_tradicao_prod_trad.png" alt="Tradição Tradicional" class="card-img">
+                        <div class="card-title">LINHA TRADICIONAL</div>
+                        <div class="card-desc">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin elit nisi, tempus ut
+                            ultricies a, hendrerit non lectus. Phasellus vitae magna tincidunt, lobortis sem eu,
+                            vulputate ligula.
+                        </div>
+                    </div>
+                    <!-- Extraforte -->
+                    <div class="product-card">
+                        <img src="assets/images/tig_tradicao_prod_extra.png" alt="Tradição Extraforte" class="card-img">
+                        <div class="card-title">LINHA EXTRAFORTE</div>
+                        <div class="card-desc">
+                            Um dos principais produtos da linha é o Café Tradição Extraforte de 500g, caracterizado por
+                            seu sabor marcante e corpo robusto.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- GRÃO DA TERRA BRAND -->
+        <section class="grao-section">
+            <div class="tig-container">
+                <div class="grao-content-grid">
+                    <!-- Left Column: Text & Logo -->
+                    <div class="grao-left-col">
+                        <img src="assets/images/home_logo_graodaterra.png" alt="Café Grão da Terra" class="grao-logo">
+
+                        <div class="grao-text-wrapper">
+                            <p class="text-content">
+                                O Café Grão da Terra possui cafés feitos com um blend desenvolvido para atender às
+                                preferências específicas dos consumidores, destacando-se por sua acidez intensa.
+                            </p>
+                            <br>
+                            <p class="text-content">
+                                Seus cafés preservam seu sabor distintivo, aroma e pureza graças a uma cuidadosa seleção
+                                de grãos (com predominância de grãos arábica), combinadas em um processo de torra média.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Product Box (Grey Background) -->
+                    <div class="grao-right-col">
+                        <div class="grao-product-box">
+                            <!-- Image Trio -->
+                            <img src="assets/images/tig_grao_prod.png" alt="Grão da Terra Linha Tradicional"
+                                class="grao-prod-img">
+
+                            <div class="grao-prod-info">
+                                <div class="card-title">LINHA TRADICIONAL</div>
+                                <div class="card-desc">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin elit nisi, tempus ut
+                                    ultricies a, hendrerit non lectus. Phasellus vitae magna tincidunt, lobortis sem eu,
+                                    vulputate ligula.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ITAMBÉ BRAND -->
+        <div class="tig-container">
+            <section class="itambe-section">
+                <div class="itambe-content">
+                    <div class="itambe-img-col">
+                        <img src="assets/images/tig_itambe_hero.png" alt="Café Itambé">
+                    </div>
+                    <div class="itambe-text-col" style="text-align: center;">
+                        <img src="assets/images/aby.png" alt="Café Itambé"
+                            style="width: 320px; margin-bottom: 30px; align-self:center;">
+
+                        <p class="text-content">
+                            O Café Itambé é produzido a partir de uma seleção criteriosa de grãos, resultando em uma
+                            bebida de alta qualidade destinada a consumidores exigentes.
+                        </p>
+                        <br>
+                        <p class="text-content">
+                            Seus produtos podem ser preparados em diversos tipos de máquinas de filtro e cafeteiras
+                            domésticas, oferecendo versatilidade no preparo.
+                        </p>
+                    </div>
+                </div>
+
+                <h2 class="section-title-products">PRODUTOS</h2>
+
+                <div class="products-grid-2">
+                    <!-- Tradicional -->
+                    <div class="product-card">
+                        <img src="assets/images/tig_itambe_prod_trad.png" alt="Itambé Tradicional" class="card-img">
+                        <div class="card-title">LINHA TRADICIONAL</div>
+                        <div class="card-desc">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin elit nisi, tempus ut
+                            ultricies a, hendrerit non lectus. Phasellus vitae magna tincidunt, lobortis sem eu,
+                            vulputate ligula.
+                        </div>
+                    </div>
+                    <!-- Extraforte -->
+                    <div class="product-card">
+                        <img src="assets/images/tig_itambe_prod_extra.png" alt="Itambé Extraforte" class="card-img">
+                        <div class="card-title">LINHA EXTRAFORTE</div>
+                        <div class="card-desc">
+                            Um dos principais produtos da linha é o Café Tradição Extraforte de 500g, caracterizado por
+                            seu sabor marcante e corpo robusto.
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="copyright">
+                <p>@2025 Massimo Zanetti Beverage Brasil.</p>
+                <p class="rights">Todos os direitos reservados.</p>
+            </div>
+            <div class="footer-center">
+                <img src="assets/images/add.png" alt="MZB">
+            </div>
+            <div class="footer-right">
+                <a href="#" class="btn-contact-footer">CONTATO</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
