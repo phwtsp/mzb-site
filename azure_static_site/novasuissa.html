@@ -21,128 +21,76 @@
         .section-novasuissa-hero {
             position: relative;
             width: 100%;
-            /* Assuming hero is a banner, set height or aspect ratio. 
-               User said "imagem tem que aparecer por completo". 
-               If background-size: cover cuts it, contain might be better, or fixed height matching aspect ratio.
-               Let's try a responsive approach with img tag if background doesn't work well, but here I'll try adjusting size. */
             height: auto;
-            min-height: 600px;
-            /* Increased height */
-            background-image: url('assets/images/novasuissa_hero.png');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            padding-left: 10%;
-        }
-
-        .novasuissa-hero-text {
-            color: #fff;
-            max-width: 500px;
-            display: none;
-        }
-
-        .novasuissa-hero-title {
-            font-family: 'Figtree', sans-serif;
-            font-weight: 400;
-            font-size: 1.5rem;
-            /* Adjust based on layout */
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            line-height: 1.4;
-        }
-
-        /* Intro Section split layout */
-        .section-novasuissa-intro {
-            position: relative;
-            width: 100%;
-            /* The entire section background can be white or the image if it spans full width. 
-               The screenshot implies a custom layout. */
-            background-color: #fff;
+            /* Allow image to dictate height */
             padding: 0;
-            display: flex;
-            min-height: 500px;
+            margin: 0;
             overflow: hidden;
         }
 
-        /* Left side (Yellow) */
-        .novasuissa-intro-left {
-            width: 50%;
-            background: linear-gradient(135deg, #E6C35C 0%, #D4A838 100%);
-            /* Gold/Yellow gradient approximation */
+        .novasuissa-hero-img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Intro Section with Background Image */
+        .section-novasuissa-intro {
             position: relative;
+            width: 100%;
+            /* Use the specific background image requested */
+            background-image: url('assets/images/novasuissa_mid_bg_fixed.png');
+            background-repeat: no-repeat;
+            background-position: top center;
+            background-size: 100% auto;
+            /* Ensure it fits width, height auto */
+            /* Set a min-height based on aspect ratio or content, but user emphasized "height total" */
+            /* Using aspect-ratio might be good, or padding-bottom hack. 
+               1920x800 approx ratio is 2.4:1 -> 41.6% padding top */
+            min-height: 0;
+            padding-top: 41.5%;
+            /* Maintain aspect ratio */
+
+            /* Fallback for layout */
             display: flex;
-            align-items: center;
-            padding: 60px 80px;
-            /* Create the curve shape masking the right side if needed, or overlay. 
-               Simple approach: use a pseudo element or clip-path for the curve. */
-            z-index: 1;
+            align-items: flex-start;
+            /* Align text to top/center as needed */
         }
 
-        /* The curved edge effect */
-        .novasuissa-intro-left::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: -100px;
-            /* Extend out */
-            width: 200px;
-            height: 100%;
-            background: inherit;
-            /* Match bg */
-            border-radius: 0 50% 50% 0 / 0 50% 50% 0;
-            /* Elliptical curve */
-            z-index: -1;
-        }
-
-        /* Adjust for actual overlapping look from screenshot */
-        .novasuissa-intro-left {
-            /* Using a clip-path or SVG background might be more precise, but border-radius is a good start. 
-                Let's try a large circle overlay. */
-            width: 55%;
-            border-top-right-radius: 50% 100%;
-            border-bottom-right-radius: 50% 100%;
-            margin-right: -10%;
-            /* Pull image underneath */
-        }
-
+        /* Container for text overlaid on the background */
         .novasuissa-intro-content {
-            max-width: 600px;
-            z-index: 2;
-            text-align: left;
+            position: absolute;
+            top: 20%;
+            /* Adjust based on design */
+            left: 10%;
+            width: 35%;
+            /* Restrict width to the 'yellow' area */
+            height: auto;
             color: #fff;
+            /* Assuming white text on yellow bg */
+            text-align: left;
+        }
+
+        .novasuissa-intro-title {
+            /* If visual title is in image, hide this. User said "apenas ter o texto em cima" (only text on top). */
+            display: none;
         }
 
         .novasuissa-intro-text {
             font-family: 'Figtree', sans-serif;
-            font-size: 1.1rem;
-            line-height: 1.6;
-            color: #fff;
+            font-size: 1.25rem;
+            /* ~20px */
+            line-height: 1.5;
+            color: #FFFFFF;
             font-weight: 400;
         }
 
-        /* Right side (Image) */
-        .novasuissa-intro-right {
-            width: 55%;
-            background-image: url('assets/images/novasuissa_mid_bg_fixed.png');
-            /* Assuming this is the lifestyle photo */
-            background-size: cover;
-            background-position: center;
-            position: relative;
-            z-index: 0;
-        }
-
-        /* Floating Product */
-        .novasuissa-floating-product {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 3;
-            width: 250px;
-            /* Adjust size */
-            filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+        /* Hide layout elements from previous turn */
+        .novasuissa-intro-left,
+        .novasuissa-intro-right,
+        .novasuissa-floating-product,
+        .novasuissa-hero-text {
+            display: none !important;
         }
 
         /* Products Section */
@@ -189,7 +137,24 @@
             line-height: 1.5;
         }
 
-        /* Contact Section specific to Nova Suissa if needed, reusing footer */
+        /* Mobile adjust */
+        @media (max-width: 768px) {
+            .section-novasuissa-intro {
+                background-size: cover;
+                background-position: left center;
+                padding-top: 100px;
+                /* Reset padding hack */
+                padding-bottom: 100px;
+                height: auto;
+            }
+
+            .novasuissa-intro-content {
+                position: relative;
+                width: 90%;
+                left: 5%;
+                top: 0;
+            }
+        }
     </style>
 </head>
 
@@ -272,34 +237,27 @@
     <main>
         <!-- Hero Section -->
         <section class="section-novasuissa-hero">
-            <div class="novasuissa-hero-text">
-                <h1 class="novasuissa-hero-title">SABORES QUE CONECTAM</h1>
-            </div>
+            <!-- Full width image -->
+            <img src="assets/images/novasuissa_hero.png" alt="Nova Suissa Hero" class="novasuissa-hero-img">
         </section>
 
         <!-- Intro Section -->
         <section class="section-novasuissa-intro">
-            <div class="novasuissa-intro-left">
-                <div class="novasuissa-intro-content">
-                    <p class="novasuissa-intro-text">
-                        O Café Nova Suíssa é uma marca tradicional de Belo Horizonte, Minas Gerais, com mais de 40 anos
-                        de história.
-                        <br><br>
-                        Foi originada no bairro Nova Suíça, um dos mais emblemáticos da capital mineira, e desde então
-                        tem sido sinônimo de qualidade e sabor para os apreciadores de café na região.
-                    </p>
-                </div>
+            <div class="novasuissa-intro-content">
+                <p class="novasuissa-intro-text">
+                    O Café Nova Suíssa é uma marca tradicional de Belo Horizonte, Minas Gerais, com mais de 40 anos de
+                    história.
+                    <br><br>
+                    Foi originada no bairro Nova Suíça, um dos mais emblemáticos da capital mineira, e desde então tem
+                    sido sinônimo de qualidade e sabor para os apreciadores de café na região.
+                </p>
             </div>
 
-            <div class="novasuissa-intro-right">
-                <!-- Floating product overlapping both sides. 
-                     Placing it here absolute relative to the section or right column. 
-                     Since we want it centered on the split, we can put it in the intro-left or intro section container.
-                     Let's put it in the intro section container or right one but adjust position. -->
-            </div>
-
-            <img src="assets/images/novasuissa_prod_extraforte.png" alt="Nova Suissa Extra Forte"
-                class="novasuissa-floating-product">
+            <!-- Extra Forte product - positioned or hidden if included in BG. 
+                 User screenshot shows it. Assuming BG has it? 
+                 If I don't see the BG, I should keep this but maybe hide it for now if logic says BG has it.
+                 User said "apenas ter o texto em cima" -> suggests removing other elements.
+            -->
         </section>
 
         <!-- Products Section -->
