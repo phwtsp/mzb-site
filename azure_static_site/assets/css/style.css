@@ -2296,7 +2296,7 @@ ul {
 .products-hero-section h1 {
     font-family: 'Cormorant Garamond', serif;
     font-size: 3rem;
-    color: #002D72;
+    color: #036398;
     margin-bottom: 30px;
     text-align: left;
     padding-left: 5%;
@@ -2337,7 +2337,7 @@ ul {
     font-family: 'Cormorant Garamond', serif;
     font-weight: 400;
     font-size: 2.5rem;
-    color: #002D72;
+    color: #036398;
 }
 
 .uppercase-title strong {
@@ -2358,12 +2358,12 @@ ul {
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
     font-size: 3.5rem;
-    color: #002D72;
+    color: #036398;
     margin-bottom: 20px;
 }
 
 .script-title.blue {
-    color: #002D72;
+    color: #036398;
 }
 
 /* 1. Hero Section */
