@@ -2779,55 +2779,64 @@ ul {
 
 /* ========================================
    SCROLL REVEAL ANIMATIONS
+   Uses independent `translate` and `scale` properties
+   so they don't override existing `transform` rules.
    ======================================== */
 
-/* Base hidden state - elements start invisible */
+/* Base hidden state - fade only */
 .reveal {
     opacity: 0;
-    transition: opacity 0.8s ease, transform 0.8s ease;
-    will-change: opacity, transform;
+    transition: opacity 0.8s ease;
+    will-change: opacity;
 }
 
 /* Variation: fade up */
 .reveal-up {
     opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-    will-change: opacity, transform;
+    translate: 0 40px;
+    transition: opacity 0.8s ease, translate 0.8s ease;
+    will-change: opacity, translate;
 }
 
 /* Variation: fade from left */
 .reveal-left {
     opacity: 0;
-    transform: translateX(-40px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-    will-change: opacity, transform;
+    translate: -40px 0;
+    transition: opacity 0.8s ease, translate 0.8s ease;
+    will-change: opacity, translate;
 }
 
 /* Variation: fade from right */
 .reveal-right {
     opacity: 0;
-    transform: translateX(40px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-    will-change: opacity, transform;
+    translate: 40px 0;
+    transition: opacity 0.8s ease, translate 0.8s ease;
+    will-change: opacity, translate;
 }
 
 /* Variation: scale in */
 .reveal-scale {
     opacity: 0;
-    transform: scale(0.95);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-    will-change: opacity, transform;
+    scale: 0.95;
+    transition: opacity 0.8s ease, scale 0.8s ease;
+    will-change: opacity, scale;
 }
 
 /* Active state - when element is visible */
-.reveal.active,
+.reveal.active {
+    opacity: 1;
+}
+
 .reveal-up.active,
 .reveal-left.active,
-.reveal-right.active,
+.reveal-right.active {
+    opacity: 1;
+    translate: none;
+}
+
 .reveal-scale.active {
     opacity: 1;
-    transform: translateY(0) translateX(0) scale(1);
+    scale: 1;
 }
 
 /* Stagger delays for grid children */
@@ -2859,12 +2868,12 @@ ul {
 @keyframes heroFadeIn {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        translate: 0 20px;
     }
 
     to {
         opacity: 1;
-        transform: translateY(0);
+        translate: none;
     }
 }
 
@@ -2886,7 +2895,8 @@ ul {
     .reveal-right,
     .reveal-scale {
         opacity: 1;
-        transform: none;
+        translate: none;
+        scale: 1;
         transition: none;
     }
 
