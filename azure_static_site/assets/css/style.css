@@ -648,6 +648,20 @@ ul {
     align-items: center;
 }
 
+.footer-container>div {
+    flex: 1;
+}
+
+.footer-center {
+    display: flex;
+    justify-content: center;
+}
+
+.footer-right {
+    display: flex;
+    justify-content: flex-end;
+}
+
 .copyright {
     font-family: var(--font-sans);
     font-weight: 700;
@@ -891,6 +905,13 @@ ul {
         flex-direction: column;
         gap: 30px;
         text-align: center;
+    }
+
+    .footer-container>div {
+        flex: none;
+        width: 100%;
+        display: flex;
+        justify-content: center;
     }
 
     .footer {
