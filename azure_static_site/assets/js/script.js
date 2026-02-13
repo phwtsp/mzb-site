@@ -88,4 +88,33 @@ document.addEventListener('DOMContentLoaded', () => {
     if (yearSpan) {
         yearSpan.textContent = new Date().getFullYear();
     }
+
+    // ========================================
+    // SCROLL REVEAL ANIMATIONS
+    // ========================================
+    const revealElements = document.querySelectorAll('.reveal, .reveal-up, .reveal-left, .reveal-right, .reveal-scale');
+
+    if (revealElements.length > 0) {
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+
+                    // If element has stagger-children, also activate children
+                    if (entry.target.classList.contains('stagger-children')) {
+                        entry.target.querySelectorAll('.reveal-up, .reveal-scale').forEach(child => {
+                            child.classList.add('active');
+                        });
+                    }
+
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+    }
 });
