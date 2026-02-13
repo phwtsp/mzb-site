@@ -2264,23 +2264,23 @@ ul {
     color: #036398 !important;
 }
 
-/* Footer Segafredo */
-.footer-segafredo {
+/* Footer Light Blue (Used in Segafredo, Exportacao, etc) */
+.footer-light-blue {
     background-color: #f2f2f2;
     color: #036398;
 }
 
-.footer-segafredo .copyright,
-.footer-segafredo .copyright .rights {
+.footer-light-blue .copyright,
+.footer-light-blue .copyright .rights {
     color: #036398;
 }
 
-.footer-segafredo .btn-contact-footer {
+.footer-light-blue .btn-contact-footer {
     border-color: #036398;
     color: #036398;
 }
 
-.footer-segafredo .btn-contact-footer:hover {
+.footer-light-blue .btn-contact-footer:hover {
     background-color: #036398;
     color: #fff;
 }
