@@ -139,22 +139,20 @@ ul {
 /* Right: Contact */
 .contact-right {
     padding-right: 40px;
-    /* Reduced padding */
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    position: relative;
 }
 
 .btn-contact {
     font-family: var(--font-nav);
     font-weight: 700;
     font-size: 11px;
-    /* Slightly smaller */
     letter-spacing: 1.5px;
     color: #241506;
     padding: 10px 30px;
-    /* Smaller padding */
     border: 1px solid #241506;
     text-transform: uppercase;
     transition: all 0.3s;
@@ -163,6 +161,55 @@ ul {
 .btn-contact:hover {
     background: #241506;
     color: #FFF;
+}
+
+/* Contact Dropdown */
+.contact-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 40px;
+    min-width: 200px;
+    background: #ffffff;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    border: 1px solid #e8e8e8;
+    border-top: 3px solid var(--color-blue-mzb);
+    border-radius: 0 0 4px 4px;
+    z-index: 9999;
+    padding: 8px 0;
+    list-style: none;
+    flex-direction: column;
+}
+
+.contact-dropdown li {
+    width: 100%;
+    display: block;
+    background: #ffffff;
+}
+
+.contact-dropdown a {
+    display: block;
+    padding: 12px 20px;
+    color: #666;
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    text-align: left;
+    background: transparent;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.contact-dropdown a:hover {
+    background-color: #eef6fa;
+    color: var(--color-blue-mzb);
+    font-weight: 700;
+}
+
+.contact-right:hover .contact-dropdown {
+    display: flex;
 }
 
 /* 
