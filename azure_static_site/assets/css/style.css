@@ -1091,7 +1091,7 @@ ul {
     letter-spacing: 2px;
     margin: 10px 0 15px;
     color: #888;
-    text-transform: uppercase;
+    text-transform: none;
 }
 
 .stat-desc {
@@ -1236,7 +1236,7 @@ ul {
     font-weight: 400;
     line-height: 1;
     margin-bottom: 20px;
-    text-transform: capitalize;
+    text-transform: none;
 }
 
 .hero-text-overlay h1 span.italic {
@@ -1430,10 +1430,10 @@ ul {
 .stat-label {
     display: block;
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.8rem;
+    font-size: 2.2rem;
     color: #036398;
     margin-bottom: 15px;
-    font-weight: 300;
+    font-weight: 700;
     font-style: italic;
 }
 
@@ -1443,6 +1443,7 @@ ul {
     color: #666;
     line-height: 1.5;
     max-width: 250px;
+    text-align: left;
 }
 
 .structure-map-container {
@@ -1450,17 +1451,14 @@ ul {
     margin-top: 20px;
     position: relative;
     z-index: 50;
-    /* High z-index to cover the cup from below */
-    /* Ensure it has background to hide things behind */
-    padding-bottom: 40px;
-    /* Spacing */
+    padding: 0 1% 40px;
 }
 
 .map-img {
     width: 100%;
     height: auto;
     display: block;
-    max-width: 1400px;
+    max-width: 1500px;
     margin: 0 auto;
 }
 
@@ -1472,10 +1470,9 @@ ul {
     position: relative;
     padding-top: 60px;
     padding-bottom: 60px;
-    padding-left: 10%;
-    padding-right: 10%;
+    padding-left: 5%;
+    padding-right: 5%;
     z-index: auto;
-    /* Allow cup to pop out */
 }
 
 .mvq-divider-img {
@@ -1504,10 +1501,10 @@ ul {
 
 .mvq-left-content {
     flex: 1;
-    padding: 60px 0% 0px 10%;
+    padding: 60px 30px 0px 5%;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 25px;
 }
 
 .mvq-top-row {
@@ -1521,13 +1518,13 @@ ul {
 
 .mvq-box {
     border: 1px solid rgba(255, 255, 255, 0.6);
-    padding: 30px;
+    padding: 25px;
     flex: 1;
 }
 
 .mvq-box h3 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 2.2rem;
+    font-size: 2rem;
     line-height: 1.1;
     margin-bottom: 20px;
     font-weight: 300;
@@ -1537,6 +1534,9 @@ ul {
 .mvq-box h3 strong {
     font-weight: 700;
     font-style: normal;
+    font-size: 3rem;
+    display: block;
+    margin-top: 5px;
 }
 
 
@@ -1545,13 +1545,10 @@ ul {
 /* Right Image Block - The logic for the Cup overlapping upwards */
 .mvq-right-image {
     width: 28%;
-    /* Restore width */
     min-width: 320px;
     position: relative;
-    margin-right: 8%;
-    /* Reduced spacing from right edge */
+    margin-right: 3%;
     z-index: 15;
-    /* Interleave: below Map (50) andStats (20), but above Blue Section */
 }
 
 .cup-overflow-img {
@@ -1589,7 +1586,43 @@ ul {
    PERFECT.
 */
 
-/* --- Responsive --- */
+/* --- Responsive (About Page) --- */
+@media (max-width: 1200px) {
+    .structure-map-container {
+        padding: 0 2% 40px;
+    }
+
+    .mvq-blue-section {
+        padding-left: 3%;
+        padding-right: 3%;
+    }
+
+    .mvq-left-content {
+        padding: 40px 20px 0 3%;
+    }
+
+    .mvq-top-row {
+        gap: 15px;
+    }
+
+    .mvq-box {
+        padding: 18px;
+    }
+
+    .mvq-box h3 {
+        font-size: 1.8rem;
+    }
+
+    .mvq-box h3 strong {
+        font-size: 2.5rem;
+    }
+
+    .mvq-right-image {
+        min-width: 260px;
+        margin-right: 2%;
+    }
+}
+
 @media (max-width: 768px) {
     .about-hero-section {
         height: 60vh;
@@ -1613,8 +1646,6 @@ ul {
         display: none;
     }
 
-    /* Hide complex deco on mobile usually */
-
     .stats-row {
         flex-direction: column;
     }
@@ -1634,8 +1665,6 @@ ul {
     .mvq-right-image {
         display: none;
     }
-
-    /* Usually hide complex intersection images on mobile or stack them specific way? */
 }
 
 /* =========================================
