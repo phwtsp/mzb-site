@@ -2264,6 +2264,27 @@ ul {
     color: #036398 !important;
 }
 
+/* Footer Segafredo */
+.footer-segafredo {
+    background-color: #f2f2f2;
+    color: #036398;
+}
+
+.footer-segafredo .copyright,
+.footer-segafredo .copyright .rights {
+    color: #036398;
+}
+
+.footer-segafredo .btn-contact-footer {
+    border-color: #036398;
+    color: #036398;
+}
+
+.footer-segafredo .btn-contact-footer:hover {
+    background-color: #036398;
+    color: #fff;
+}
+
 /* Marcas Page */
 .products-hero-section {
     position: relative;
