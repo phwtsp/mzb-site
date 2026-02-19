@@ -1,0 +1,93 @@
+[
+    {
+        "id": "pacaembu_gourmet_500g",
+        "category": "torrado_moido",
+        "image": "assets/images/pacaembu_gourmet_500g_torrado.png",
+        "title": "CAFÉ PACAEMBU GOURMET 500 G – TORRADO E MOÍDO (EMBALAGEM A VÁCUO)",
+        "description": "Café gourmet 100% Arábica, com torra clara, que revela notas suaves e um aroma marcante. Ideal para quem aprecia bebidas delicadas e aromáticas."
+    },
+    {
+        "id": "pacaembu_espresso_gourmet_1kg",
+        "category": "em_grao",
+        "image": "assets/images/pacaembu_espresso_gourmet_1Kg_graos.png",
+        "title": "CAFÉ PACAEMBU ESPRESSO GOURMET 1 KG – EM GRÃOS",
+        "description": "Versão em grãos do clássico Pacaembu Gourmet, desenvolvida especialmente para máquinas de espresso ou para moagem na hora."
+    },
+    {
+        "id": "pacaembu_superior_500g_250g",
+        "category": "torrado_moido",
+        "image": "assets/images/pacaembu_superior_500g_e_250g_torrado.png",
+        "title": "CAFÉ PACAEMBU SUPERIOR 500 G E 250 G – TORRADO E MOÍDO (EMBALAGEM A VÁCUO)",
+        "description": "Café superior torrado e moído, elaborado com grãos cuidadosamente selecionados para garantir um aroma refinado e um sabor marcante. Equilibrado e encorpado, combina tradição e qualidade para transformar cada momento em uma experiência especial."
+    },
+    {
+        "id": "pacaembu_tradicional",
+        "category": "torrado_moido",
+        "image": "assets/images/pacaembu_prod_tradicional.png",
+        "title": "Linha Tradicional",
+        "description": "Um café torrado e moído tradicional, que leva até você o sabor clássico e marcante do verdadeiro café. Encorpado, aromático e equilibrado, é a escolha ideal para o dia a dia, mantendo a tradição que valoriza qualidade e excelência."
+    },
+    {
+        "id": "pacaembu_extraforte",
+        "category": "torrado_moido",
+        "image": "assets/images/pacaembu_prod_extraforte.png",
+        "title": "Linha Extra Forte",
+        "description": "Um café torrado e moído extra forte, para quem busca intensidade e sabor marcante em cada xícara. Encorpado e vigoroso, mantém a tradição de qualidade e excelência, trazendo a energia ideal para o seu dia."
+    },
+    {
+        "id": "pacaembu_cappuccino_tradicional_1kg",
+        "category": "instantaneo",
+        "image": "assets/images/pacaembu_capuccino_tradicional_1kg.png",
+        "title": "Cappuccino Tradicional Pacaembu 1kg Pacote",
+        "description": "A combinação de ingredientes especiais torna o Cappuccino Tradicional Pacaembu uma bebida saborosa e prática. Versátil: pode ser consumido quente, em shake ou vitaminas geladas. Praticidade: Pronto em instantes."
+    },
+    {
+        "id": "pacaembu_cappuccino_tradicional_100g",
+        "category": "instantaneo",
+        "image": "assets/images/pacaembu_capuccino_tradicional_sache_100g.png",
+        "title": "Cappuccino Tradicional Pacaembu Sachê 100 Gramas",
+        "description": "A combinação de ingredientes especiais torna o Cappuccino Tradicional Pacaembu uma bebida saborosa e prática. Versátil: pode ser consumido quente, em shake ou vitaminas geladas. Praticidade: Pronto em instantes."
+    },
+    {
+        "id": "pacaembu_cappuccino_light_70g",
+        "category": "instantaneo",
+        "image": "assets/images/pacaembu_capuccino_light_sache_70g.png",
+        "title": "Cappuccino Light Pacaembu Sachê 70 Gramas",
+        "description": "Cappuccino light, com 30% menos calorias, mantendo o sabor cremoso e equilibrado da versão tradicional. Uma bebida suave e reconfortante, ideal para quem busca prazer e leveza a cada gole."
+    },
+    {
+        "id": "pacaembu_soluvel_forte_50g",
+        "category": "instantaneo",
+        "image": "assets/images/pacaembu_soluvel_forte_50g.png",
+        "title": "Café Solúvel Forte Sachê Pacaembu 50 Gramas",
+        "description": "O café para quem não tem tempo a perder. Café Solúvel Forte Sachê Pacaembu tem dissolução instantânea em água ou leite quente. Sabor forte e marcante. Praticidade: pronto em instantes!"
+    },
+    {
+        "id": "pacaembu_cappuccino_chocolate_200g",
+        "category": "instantaneo",
+        "image": "assets/images/pacaembu_capuccino_chocolage_200g.png",
+        "title": "Cappuccino Chocolate Pacaembu 200 Gramas",
+        "description": "O clássico com um toque especial. O cappuccino que você já conhece combinado com o sabor de chocolate. Versátil: pode ser consumido quente, em shake ou vitaminas geladas. Praticidade: pronto em instantes."
+    },
+    {
+        "id": "pacaembu_cappuccino_tradicional_200g",
+        "category": "instantaneo",
+        "image": "assets/images/pacaembu_capuccino_tradicional_200g.png",
+        "title": "Cappuccino Tradicional Pacaembu 200 Gramas",
+        "description": "A combinação de ingredientes especiais torna o Cappuccino Tradicional Pacaembu uma bebida saborosa e prática. Versátil: pode ser consumido quente, em shake ou vitaminas geladas. Praticidade: pronto em instantes."
+    },
+    {
+        "id": "pacaembu_filtro_reutilizavel",
+        "category": "filtro",
+        "image": "assets/images/pacaembu_filtro_reutilizavel.png",
+        "title": "Filtro Reutilizável Polipropileno Pacaembu 103",
+        "description": "Mais economia e reutilizável. Filtro Reutilizável Polipropileno Pacaembu 103 possui selagem resistente e pode ser reutilizado por até 5 vezes devido à inovadora tecnologia TNT, que garante qualidade do filtro sem alteração no sabor. Filtra mais rápido, proporcionando mais sabor e aroma ao café. Responsabilidade ambiental: é reciclável e não utiliza produtos químicos ou madeira na produção."
+    },
+    {
+        "id": "pacaembu_filtro_descartavel",
+        "category": "filtro",
+        "image": "assets/images/pacaembu_filtro_descartavel.png",
+        "title": "Filtro de Papel Pacaembu 103",
+        "description": "Contém 30 unidades. Filtro de Papel Pacaembu 103 oferece praticidade para passar o melhor café. Descartável e prático, com selagem resistente."
+    }
+]
