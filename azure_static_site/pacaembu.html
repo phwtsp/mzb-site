@@ -91,25 +91,121 @@
             letter-spacing: -1px;
         }
 
-        .products-filter {
-            display: inline-flex;
+        /* Dynamic filter styles */
+        .products-filter-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+
+        .products-filter-trigger {
+            display: flex;
             align-items: center;
             justify-content: space-between;
+            gap: 15px;
             border: 1px solid #5C5B5A;
             padding: 10px 20px;
             cursor: pointer;
-            background-color: transparent;
+            font-family: 'Figtree', sans-serif;
+            font-size: 0.85rem;
+            color: #5C5B5A;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            background: transparent;
+            transition: all 0.3s ease;
             min-width: 180px;
-            margin-bottom: 0;
         }
 
-        .products-filter span {
-            font-family: 'Raleway', sans-serif;
-            font-weight: 700;
-            font-size: 0.7rem;
+        .products-filter-trigger:hover,
+        .products-filter-trigger.active {
+            background: #f9f9f9;
+            border-color: #333;
+        }
+
+        .products-filter-trigger svg.chevron-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .products-filter-trigger.active svg.chevron-icon {
+            transform: rotate(180deg);
+        }
+
+        .products-filter-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            width: 250px;
+            background-color: #ffffff;
+            border: 1px solid #5C5B5A;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            z-index: 100;
+            padding: 15px 0;
+            margin-top: 5px;
+        }
+
+        .products-filter-dropdown.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-header-line {
+            border-bottom: 1px solid #5C5B5A;
+            margin: 0 20px 10px;
+            width: calc(100% - 40px);
+        }
+
+        .filter-option {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 12px 25px;
+            cursor: pointer;
+            transition: background 0.2s;
+            font-family: 'Figtree', sans-serif;
+            font-size: 0.8rem;
             color: #5C5B5A;
-            letter-spacing: 1.5px;
+            font-weight: 500;
             text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .filter-option:hover {
+            background: #f0f0f0;
+        }
+
+        .filter-option.active {
+            background: #e0e0e0;
+            font-weight: 700;
+        }
+
+        .filter-icon {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .filter-icon svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .filter-icon-main {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 5px;
+            width: 24px;
+            height: 24px;
+        }
+
+        .filter-icon-main svg {
+            width: 100%;
+            height: 100%;
         }
 
         .products-grid {
@@ -416,6 +512,19 @@
                             <span>TORRADO E MOÍDO</span>
                         </div>
 
+                        <div class="filter-option" data-filter="capsula">
+                            <div class="filter-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" style="width: 80%; height: 80%;">
+                                    <path d="M6 8L7 6C8 4.5 10 4 12 4C14 4 16 4.5 17 6L18 8" stroke="#5C5B5A"
+                                        stroke-width="1.5" stroke-linecap="round" />
+                                    <path d="M5 8H19L17.5 18C17.2 19 15 20 12 20C9 20 6.8 19 6.5 18L5 8Z"
+                                        stroke="#5C5B5A" stroke-width="1.5" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <span>CÁPSULA</span>
+                        </div>
+
                         <div class="filter-option" data-filter="instantaneo">
                             <div class="filter-icon">
                                 <img src="assets/images/INSTANTANEO.svg" alt="Instantâneo"
@@ -439,7 +548,7 @@
                 <!-- Products will be loaded here dynamically by pacaembu-products.js -->
             </div>
 
-            <a href="https://www.lojasegafredo.com.br/" target="_blank" class="btn-shop-pacaembu">
+            <a href="https://www.lojacafepacaembu.com.br/" target="_blank" class="btn-shop-pacaembu">
                 <svg class="cart-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="9" cy="21" r="1" />
