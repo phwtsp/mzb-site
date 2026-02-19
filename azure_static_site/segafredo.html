@@ -241,28 +241,133 @@
             margin-bottom: 40px;
         }
 
-        /* Filter Mockup */
+        /* Dynamic Filter Wrappers */
         .products-filter {
             display: flex;
             justify-content: flex-end;
-            /* Align right */
             gap: 20px;
             max-width: 1200px;
             margin: 0 auto 40px auto;
             padding: 0 20px;
         }
 
-        .filter-btn {
-            border: 1px solid #ccc;
-            background: #fff;
-            padding: 8px 15px;
-            font-family: 'Figtree', sans-serif;
-            font-size: 0.9rem;
-            color: #5C5B5A;
-            cursor: pointer;
+        .products-filter-wrapper {
+            position: relative;
+            display: inline-block;
+            text-align: left;
+        }
+
+        .products-filter-trigger {
             display: flex;
             align-items: center;
-            gap: 5px;
+            justify-content: space-between;
+            gap: 15px;
+            border: 1px solid #5C5B5A;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-family: 'Figtree', sans-serif;
+            font-size: 0.85rem;
+            color: #5C5B5A;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            background: #fff;
+            transition: all 0.3s ease;
+            min-width: 180px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .products-filter-trigger:hover,
+        .products-filter-trigger.active {
+            background: #f9f9f9;
+            border-color: #333;
+        }
+
+        .products-filter-trigger svg.chevron-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .products-filter-trigger.active svg.chevron-icon {
+            transform: rotate(180deg);
+        }
+
+        .products-filter-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            width: 250px;
+            background-color: #ffffff;
+            border: 1px solid #5C5B5A;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            z-index: 100;
+            padding: 15px 0;
+            margin-top: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .products-filter-dropdown.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-header-line {
+            border-bottom: 1px solid #5C5B5A;
+            margin: 0 20px 10px;
+            width: calc(100% - 40px);
+        }
+
+        .filter-option {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 12px 25px;
+            cursor: pointer;
+            transition: background 0.2s;
+            font-family: 'Figtree', sans-serif;
+            font-size: 0.8rem;
+            color: #5C5B5A;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .filter-option:hover {
+            background: #f0f0f0;
+        }
+
+        .filter-option.active {
+            background: #e0e0e0;
+            font-weight: 700;
+        }
+
+        .filter-icon {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .filter-icon svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .filter-icon-main {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 5px;
+            width: 24px;
+            height: 24px;
+        }
+
+        .filter-icon-main svg {
+            width: 100%;
+            height: 100%;
         }
 
         .products-grid {
@@ -541,74 +646,88 @@
             <h2 class="products-title reveal-up">PRODUTOS</h2>
 
             <div class="products-filter">
-                <button class="filter-btn">FILTRAR USO <svg width="10" height="6" viewBox="0 0 10 6" fill="none">
-                        <path d="M1 1L5 5L9 1" stroke="#5C5B5A" />
-                    </svg></button>
-                <button class="filter-btn">FILTRAR TIPO <svg width="10" height="6" viewBox="0 0 10 6" fill="none">
-                        <path d="M1 1L5 5L9 1" stroke="#5C5B5A" />
-                    </svg></button>
+
+                <!-- Filter USO -->
+                <div class="products-filter-wrapper">
+                    <div class="products-filter-trigger" id="filter-uso-trigger">
+                        <span>FILTRAR USO</span>
+                        <svg class="chevron-icon" width="10" height="6" viewBox="0 0 10 6" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1L5 5L9 1" stroke="#5C5B5A" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+
+                    <div class="products-filter-dropdown" id="filter-uso-dropdown">
+                        <div class="dropdown-header-line"></div>
+
+                        <div class="filter-option filter-option-uso" data-filter="domestico">
+                            <div class="filter-icon">
+                                <img src="assets/images/DOMESTICO.svg" alt="Uso Doméstico"
+                                    style="width: 100%; height: 100%;">
+                            </div>
+                            <span>DOMÉSTICO</span>
+                        </div>
+                        <div class="filter-option filter-option-uso" data-filter="profissional">
+                            <div class="filter-icon">
+                                <img src="assets/images/PROFISSIONAL.svg" alt="Uso Profissional"
+                                    style="width: 100%; height: 100%;">
+                            </div>
+                            <span>PROFISSIONAL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Filter TIPO -->
+                <div class="products-filter-wrapper">
+                    <div class="products-filter-trigger" id="filter-tipo-trigger">
+                        <span>FILTRAR TIPO</span>
+                        <svg class="chevron-icon" width="10" height="6" viewBox="0 0 10 6" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1L5 5L9 1" stroke="#5C5B5A" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+
+                    <div class="products-filter-dropdown" id="filter-tipo-dropdown">
+                        <div class="dropdown-header-line"></div>
+
+                        <div class="filter-option filter-option-tipo" data-filter="em_grao">
+                            <div class="filter-icon">
+                                <img src="assets/images/emgrao.svg" alt="Em Grão" style="width: 100%; height: 100%;">
+                            </div>
+                            <span>EM GRÃO</span>
+                        </div>
+
+                        <div class="filter-option filter-option-tipo" data-filter="torrado_moido">
+                            <div class="filter-icon">
+                                <img src="assets/images/novasuissa_grao_moido.svg" alt="Torrado e Moído"
+                                    style="width: 100%; height: 100%;">
+                            </div>
+                            <span>TORRADO E MOÍDO</span>
+                        </div>
+
+                        <div class="filter-option filter-option-tipo" data-filter="capsula">
+                            <div class="filter-icon">
+                                <img src="assets/images/CAPSULA.svg" alt="Cápsula" style="width: 100%; height: 100%;">
+                            </div>
+                            <span>CÁPSULA</span>
+                        </div>
+
+                        <div class="filter-option filter-option-tipo" data-filter="instantaneo">
+                            <div class="filter-icon">
+                                <img src="assets/images/INSTANTANEO.svg" alt="Instantâneo"
+                                    style="width: 100%; height: 100%;">
+                            </div>
+                            <span>INSTANTÂNEO</span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
             <div class="products-grid reveal-up stagger-children">
-                <!-- Product 1: ESPRESSO CASA -->
-                <div class="product-card">
-                    <div class="product-img-wrapper">
-                        <img src="assets/images/segafredo_abz.png" alt="Espresso Casa">
-                    </div>
-                    <h3>ESPRESSO CASA</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis elit. Ut id ex a
-                        hendrerit non lectus. Phasellus a lacus eget leo varius tristique quis id vulputate ligula.</p>
-                </div>
-
-                <!-- Product 2: INTERMEZZO -->
-                <div class="product-card">
-                    <div class="product-img-wrapper">
-                        <img src="assets/images/segafredo_aca.png" alt="Intermezzo">
-                    </div>
-                    <h3>INTERMEZZO</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis elit. Ut id ex a
-                        hendrerit non lectus. Phasellus a lacus eget leo varius tristique quis id vulputate ligula.</p>
-                </div>
-
-                <!-- Product 3: SELECTION (Black Bag) -->
-                <div class="product-card">
-                    <div class="product-img-wrapper">
-                        <img src="assets/images/segafredo_acg.png" alt="Selection">
-                    </div>
-                    <h3>SELECTION</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis elit. Ut id ex a
-                        hendrerit non lectus. Phasellus a lacus eget leo varius tristique quis id vulputate ligula.</p>
-                </div>
-
-                <!-- Product 4: SELECTION (Black Bag) -->
-                <div class="product-card">
-                    <div class="product-img-wrapper">
-                        <img src="assets/images/segafredo_ach.png" alt="Selection">
-                    </div>
-                    <h3>SELECTION</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis elit. Ut id ex a
-                        hendrerit non lectus. Phasellus a lacus eget leo varius tristique quis id vulputate ligula.</p>
-                </div>
-
-                <!-- Product 5: ESPRESSO ITALIANO -->
-                <div class="product-card">
-                    <div class="product-img-wrapper">
-                        <img src="assets/images/segafredo_acn.png" alt="Espresso Italiano">
-                    </div>
-                    <h3>ESPRESSO ITALIANO</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis elit. Ut id ex a
-                        hendrerit non lectus. Phasellus a lacus eget leo varius tristique quis id vulputate ligula.</p>
-                </div>
-
-                <!-- Product 6: MASSIMO -->
-                <div class="product-card">
-                    <div class="product-img-wrapper">
-                        <img src="assets/images/segafredo_aco.png" alt="Massimo">
-                    </div>
-                    <h3>MASSIMO</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis elit. Ut id ex a
-                        hendrerit non lectus. Phasellus a lacus eget leo varius tristique quis id vulputate ligula.</p>
-                </div>
+                <!-- Products will be loaded here dynamically by segafredo-products.js -->
             </div>
 
             <a href="https://www.lojasegafredo.com.br/" target="_blank" class="btn-shop">
@@ -641,6 +760,7 @@
     </footer>
 
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/segafredo-products.js"></script>
 </body>
 
 </html>
