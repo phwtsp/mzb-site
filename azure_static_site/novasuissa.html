@@ -241,7 +241,6 @@
             }
         }
 
-        /* Mobile adjust */
         @media (max-width: 768px) {
             .section-novasuissa-intro {
                 background-size: cover;
@@ -258,6 +257,139 @@
                 left: 5%;
                 top: 0;
             }
+
+            /* Ensure filter fits on mobile */
+            .products-filter-trigger {
+                width: 100%;
+                justify-content: space-between;
+            }
+
+            .products-filter-dropdown {
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+
+        /* Dynamic filter styles */
+        .products-filter-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+
+        .products-filter-trigger {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            border: 1px solid #5C5B5A;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-family: 'Figtree', sans-serif;
+            font-size: 0.85rem;
+            color: #5C5B5A;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            background: transparent;
+            transition: all 0.3s ease;
+            min-width: 180px;
+        }
+
+        .products-filter-trigger:hover,
+        .products-filter-trigger.active {
+            background: #f9f9f9;
+            border-color: #333;
+        }
+
+        .products-filter-trigger svg {
+            transition: transform 0.3s ease;
+        }
+
+        .products-filter-trigger.active svg {
+            transform: rotate(180deg);
+        }
+
+        .products-filter-dropdown {
+            position: absolute;
+            top: 100%;
+            /* flush with button */
+            right: 0;
+            width: 250px;
+            /* wider to accommodate text */
+            background: #f9f9f9;
+            /* match bg color of page or white? Page is #f2f2f2 product section. Dropdown should be distinct maybe white. */
+            background-color: #ffffff;
+            border: 1px solid #5C5B5A;
+            /* box-shadow: 0 5px 15px rgba(0,0,0,0.1); */
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            z-index: 100;
+            padding: 15px 0;
+            margin-top: 5px;
+        }
+
+        .products-filter-dropdown.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-header-line {
+            border-bottom: 1px solid #5C5B5A;
+            margin: 0 20px 10px;
+            width: calc(100% - 40px);
+        }
+
+        .filter-option {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 12px 25px;
+            cursor: pointer;
+            transition: background 0.2s;
+            font-family: 'Figtree', sans-serif;
+            font-size: 0.8rem;
+            color: #5C5B5A;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .filter-option:hover {
+            background: #f0f0f0;
+        }
+
+        .filter-option.active {
+            background: #e0e0e0;
+            font-weight: 700;
+        }
+
+        .filter-icon {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .filter-icon svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .filter-icon-main {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 5px;
+            width: 24px;
+            height: 24px;
+        }
+
+        .filter-icon-main svg {
+            width: 100%;
+            height: 100%;
         }
     </style>
 </head>
@@ -377,48 +509,57 @@
 
             <div class="novasuissa-products-header">
                 <!-- Filter Button -->
-                <div class="products-filter-ns">
-                    <span>FILTRAR TIPO</span>
-                    <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1 1L5 5L9 1" stroke="#5C5B5A" stroke-width="1.5" />
-                    </svg>
+                <div class="products-filter-wrapper">
+                    <div class="products-filter-trigger">
+                        <!-- Custom Slider Icon representing 'Filter' similar to design -->
+                        <div class="filter-icon-main">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <line x1="4" y1="6" x2="20" y2="6" stroke="#5C5B5A" stroke-width="1.5"
+                                    stroke-linecap="round" />
+                                <circle cx="8" cy="6" r="2.5" fill="#f2f2f2" stroke="#5C5B5A" stroke-width="1.5" />
+
+                                <line x1="4" y1="12" x2="20" y2="12" stroke="#5C5B5A" stroke-width="1.5"
+                                    stroke-linecap="round" />
+                                <circle cx="16" cy="12" r="2.5" fill="#f2f2f2" stroke="#5C5B5A" stroke-width="1.5" />
+
+                                <line x1="4" y1="18" x2="20" y2="18" stroke="#5C5B5A" stroke-width="1.5"
+                                    stroke-linecap="round" />
+                                <circle cx="8" cy="18" r="2.5" fill="#f2f2f2" stroke="#5C5B5A" stroke-width="1.5" />
+                            </svg>
+                        </div>
+                        <span class="current-filter-label">FILTRAR TIPO</span>
+                        <svg class="chevron-icon" width="10" height="6" viewBox="0 0 10 6" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1L5 5L9 1" stroke="#5C5B5A" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+
+                    <div class="products-filter-dropdown">
+                        <div class="dropdown-header-line"></div>
+
+                        <div class="filter-option" data-filter="torrado_moido">
+                            <div class="filter-icon">
+                                <img src="assets/images/novasuissa_grao_moido.svg" alt="Grão e Moído"
+                                    style="width: 100%; height: 100%;">
+                            </div>
+                            <span>GRÃO E MOÍDO</span>
+                        </div>
+
+                        <div class="filter-option" data-filter="filtro">
+                            <div class="filter-icon">
+                                <img src="assets/images/novasuissa_filtro.svg" alt="Filtro"
+                                    style="width: 80%; height: 80%;">
+                            </div>
+                            <span>FILTRO</span>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="novasuissa-products-grid reveal-up stagger-children">
-                <!-- Tradicional -->
-                <div class="novasuissa-product-card">
-                    <!-- Using the product pack image. Assuming the previously set "pack" image or trying to use the one from the directory if named nicely. 
-                         Previous command Step 797 attempted to copy 'aao.png' -> 'novasuissa_prod_extraforte_pack.png' and others.
-                         Actually, let's assume 'novasuissa_prod_tradicional.png' is the one we have, or if it isn't the pack, I might need to swap.
-                         User screenshot shows packs. 
-                         I will stick to the existing referenced images but be mindful they might need update if they are single bags. 
-                         I will check if I can assume they are packs. -->
-                    <img src="assets/images/novasuissa_prod_tradicional.png" alt="Linha Tradicional"
-                        class="novasuissa-product-img">
-                    <div class="novasuissa-product-info">
-                        <h3 class="novasuissa-product-title">LINHA TRADICIONAL</h3>
-                        <p class="novasuissa-product-desc">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin elit nisi, tempus ut
-                            ultricies a, hendrerit non lectus. Phasellus vitae magna tincidunt, lobortis sem eu,
-                            vulputate ligula.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Extra Forte -->
-                <div class="novasuissa-product-card">
-                    <img src="assets/images/novasuissa_prod_extraforte.png" alt="Linha Extraforte"
-                        class="novasuissa-product-img">
-                    <div class="novasuissa-product-info">
-                        <h3 class="novasuissa-product-title">LINHA EXTRAFORTE</h3>
-                        <p class="novasuissa-product-desc">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin elit nisi, tempus ut
-                            ultricies a, hendrerit non lectus. Phasellus vitae magna tincidunt, lobortis sem eu,
-                            vulputate ligula.
-                        </p>
-                    </div>
-                </div>
+            <div id="products-grid" class="novasuissa-products-grid reveal-up stagger-children">
+                <!-- Products will be loaded here dynamically -->
             </div>
 
             <p class="novasuissa-bottom-text">
@@ -446,6 +587,7 @@
     </footer>
 
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/novasuissa-products.js"></script>
 </body>
 
 </html>

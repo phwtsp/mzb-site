@@ -1,0 +1,23 @@
+[
+  {
+    "id": "tradicional",
+    "category": "torrado_moido",
+    "image": "assets/images/novasuissa_prod_tradicional.png",
+    "title": "LINHA TRADICIONAL",
+    "description": "Café para o consumo diário, com torra mais escura e perfil de sabor mais intenso. Amplamente disponível nos canais de varejo e atacado."
+  },
+  {
+    "id": "extraforte",
+    "category": "torrado_moido",
+    "image": "assets/images/novasuissa_prod_extraforte.png",
+    "title": "LINHA EXTRAFORTE",
+    "description": "Café para o consumo diário, com torra mais escura e perfil de sabor mais intenso. Amplamente disponível nos canais de varejo e atacado."
+  },
+  {
+    "id": "filtro_reutilizavel",
+    "category": "filtro",
+    "image": "assets/images/novasuissa_prod_filtro.png",
+    "title": "FILTRO REUTILIZÁVEL 103",
+    "description": "Filtro reutilizável Nova Suíça – sustentável, prático e econômico. Substitui os filtros descartáveis preservando o sabor natural do café, com fácil limpeza e durabilidade para o uso diário."
+  }
+]

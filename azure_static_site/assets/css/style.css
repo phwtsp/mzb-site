@@ -2683,6 +2683,26 @@ ul {
         max-width: 100%;
         padding: 30px;
     }
+
+    .filter-icon {
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .filter-icon svg {
+        width: 100%;
+        height: 100%;
+    }
+
+    .filter-icon-main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 5px;
+    }
 }
 
 /* 9. Main Brands */
