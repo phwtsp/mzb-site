@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "tipo": "torrado_moido",
             "uso": "domestico",
             "image": "assets/images/segafredo_selection_moido_500g.png",
-            "title": "SEGAFREDO ZANETTI SELECTION 500 G E 250 G TORRADO E MOÍDO",
+            "title": "SEGAFREDO ZANETTI SELECTION 500 G TORRADO E MOÍDO",
             "description": "Versão torrada e moída do blend Selection. Um blend premium à base de grãos Arábica, com um toque de Robusta de alta qualidade, recriando todos os dias a magia do verdadeiro espresso italiano. Apresenta notas de baunilha, caramelo e chocolate. 100% Arábica."
         },
         {
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "tipo": "torrado_moido",
             "uso": "domestico",
             "image": "assets/images/segafredo_intermezzo.png",
-            "title": "SEGAFREDO ZANETTI INTERMEZZO 500 G E 250 G TORRADO E MOÍDO",
+            "title": "SEGAFREDO ZANETTI INTERMEZZO 500 G TORRADO E MOÍDO",
             "description": "Blend torrado e moído de Arábica + Robusta, com sabor intenso e encorpado, ideal para quem busca um espresso com aroma mais marcante e maior estrutura."
         },
         {
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "tipo": "torrado_moido",
             "uso": "domestico",
             "image": "assets/images/segafredo_expresso_casa.png",
-            "title": "SEGAFREDO ZANETTI ESPRESSO CASA 500 G E 250 G TORRADO E MOÍDO",
+            "title": "SEGAFREDO ZANETTI ESPRESSO CASA 500 G TORRADO E MOÍDO",
             "description": "“O verdadeiro espresso italiano.” Ideal para uso doméstico, mantendo o corpo, o aroma e a crema de um autêntico espresso italiano. Apresenta notas de cereja escura, framboesa e toques terrosos."
         },
         {
@@ -117,6 +117,14 @@ document.addEventListener('DOMContentLoaded', () => {
             "image": "assets/images/segafredo_capuccino_200g.png",
             "title": "SEGAFREDO ZANETTI CAPPUCCINO SELECTION CLÁSSICO 200 G",
             "description": "Mistura prática para o preparo instantâneo de cappuccino. Combina base láctea, creme, café instantâneo e açúcar. Perfeito para lanches ou sobremesas, com a assinatura Segafredo."
+        },
+        {
+            "id": "segafredo_hot_ciok",
+            "tipo": "instantaneo",
+            "uso": "domestico",
+            "image": "assets/images/segafredo_hot_ciok.png",
+            "title": "CHOCOLATE EM PÓ HOT CIOK – 25 SACHÊS DE 25 G CADA (IMPORTADO)",
+            "description": "Bebida de chocolate quente."
         }
     ];
 
