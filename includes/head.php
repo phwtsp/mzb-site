@@ -193,5 +193,9 @@ $structuredData = [
 <?php endif; ?>
 <?php endforeach; ?>
 
+    <link rel="icon" type="image/x-icon" href="<?= htmlspecialchars($siteBaseUrl . '/favicon.ico', ENT_QUOTES, 'UTF-8') ?>">
+    <link rel="icon" type="image/png" sizes="512x512" href="<?= htmlspecialchars(asset('assets/images/favicon.png'), ENT_QUOTES, 'UTF-8') ?>">
+    <link rel="apple-touch-icon" sizes="180x180" href="<?= htmlspecialchars(asset('assets/images/favicon.png'), ENT_QUOTES, 'UTF-8') ?>">
+
     <link rel="stylesheet" href="<?= htmlspecialchars(asset('assets/css/style.css'), ENT_QUOTES, 'UTF-8') ?>">
 <?php require __DIR__ . '/analytics.php'; ?>
