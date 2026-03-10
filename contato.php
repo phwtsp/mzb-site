@@ -271,7 +271,7 @@ require __DIR__ . '/includes/header.php';
 
                 <!-- Right: Form -->
                 <div class="contact-form-col reveal-right">
-                    <form class="contact-form" action="send-email.php" method="POST">
+                    <form class="contact-form" action="/send-email.php" method="POST">
                         <input type="hidden" name="form_type" value="contato">
                         <input type="hidden" name="return_to" value="contato">
                         <?php if ($form_message !== ''): ?>

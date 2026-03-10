@@ -237,7 +237,7 @@ require __DIR__ . '/includes/header.php';
 
                 <!-- Right: Form -->
                 <div class="work-form-col hero-animate-delay">
-                    <form class="work-form" action="send-email.php" method="POST" enctype="multipart/form-data">
+                    <form class="work-form" action="/send-email.php" method="POST" enctype="multipart/form-data">
                         <input type="hidden" name="form_type" value="trabalhe_conosco">
                         <input type="hidden" name="return_to" value="trabalhe_conosco">
                         <?php if ($form_message !== ''): ?>
