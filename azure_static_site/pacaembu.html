@@ -121,6 +121,33 @@
             border-color: #333;
         }
 
+        .clear-filters-btn {
+            background: none;
+            border: 1px solid #5C5B5A;
+            color: #5C5B5A;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-family: 'Figtree', sans-serif;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            height: auto;
+        }
+
+        .clear-filters-btn.show {
+            display: flex;
+        }
+
+        .clear-filters-btn:hover {
+            background-color: #f9f9f9;
+            border-color: #333;
+            color: #333;
+        }
+
         .products-filter-trigger svg.chevron-icon {
             transition: transform 0.3s ease;
         }
@@ -542,6 +569,7 @@
                         </div>
                     </div>
                 </div>
+                <button id="clear-filters-btn" class="clear-filters-btn">LIMPAR FILTROS</button>
             </div>
 
             <div id="pacaembu-products-grid" class="products-grid reveal-up stagger-children">

@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const filterUsoDropdown = document.getElementById('filter-uso-dropdown');
     const filterTipoBtn = document.getElementById('filter-tipo-trigger');
     const filterTipoDropdown = document.getElementById('filter-tipo-dropdown');
+    const clearFiltersBtn = document.getElementById('clear-filters-btn');
 
     const usoOptions = document.querySelectorAll('.filter-option-uso');
     const tipoOptions = document.querySelectorAll('.filter-option-tipo');
@@ -237,7 +238,27 @@ document.addEventListener('DOMContentLoaded', () => {
             filtered = filtered.filter(product => product.tipo === currentTipoFilter);
         }
 
+        if (clearFiltersBtn) {
+            if (currentUsoFilter || currentTipoFilter) {
+                clearFiltersBtn.classList.add('show');
+            } else {
+                clearFiltersBtn.classList.remove('show');
+            }
+        }
+
         renderProducts(filtered);
+    }
+
+    if (clearFiltersBtn) {
+        clearFiltersBtn.addEventListener('click', () => {
+            currentUsoFilter = null;
+            currentTipoFilter = null;
+
+            usoOptions.forEach(opt => opt.classList.remove('active'));
+            tipoOptions.forEach(opt => opt.classList.remove('active'));
+
+            applyFilters();
+        });
     }
 
     function renderProducts(products) {

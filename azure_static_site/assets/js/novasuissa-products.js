@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const filterDropdown = document.querySelector('.products-filter-dropdown');
     const filterOptions = document.querySelectorAll('.filter-option');
     const currentFilterLabel = document.querySelector('.current-filter-label');
+    const clearFiltersBtn = document.getElementById('clear-filters-btn');
 
     let productsData = [];
 
@@ -79,11 +80,13 @@ document.addEventListener('DOMContentLoaded', () => {
             if (isActive) {
                 // If clicking already active, clear filter (show all)
                 renderProducts(productsData);
+                if (clearFiltersBtn) clearFiltersBtn.classList.remove('show');
             } else {
                 // Activate new filter
                 option.classList.add('active');
                 const filtered = productsData.filter(product => product.category === filterValue);
                 renderProducts(filtered);
+                if (clearFiltersBtn) clearFiltersBtn.classList.add('show');
             }
 
             // Close dropdown
@@ -91,6 +94,14 @@ document.addEventListener('DOMContentLoaded', () => {
             filterBtn.classList.remove('active');
         });
     });
+
+    if (clearFiltersBtn) {
+        clearFiltersBtn.addEventListener('click', () => {
+            filterOptions.forEach(opt => opt.classList.remove('active'));
+            renderProducts(productsData);
+            clearFiltersBtn.classList.remove('show');
+        });
+    }
 
     function renderProducts(products) {
         if (!productsGrid) return;
