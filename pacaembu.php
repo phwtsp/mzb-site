@@ -467,7 +467,7 @@ require __DIR__ . '/includes/header.php';
                                         stroke="#5C5B5A" stroke-width="1.5" stroke-linejoin="round" />
                                 </svg>
                             </div>
-                            <span>CÁPSULA</span>
+                            <span>CÁPSULA DE ALUMÍNIO</span>
                         </div>
 
                         <div class="filter-option" data-filter="instantaneo">

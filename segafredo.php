@@ -552,7 +552,7 @@ require __DIR__ . '/includes/header.php';
 
             <div class="history-content reveal-right">
                 <p>A Segafredo Zanetti nasceu na Itália nos anos 1970, quando Massimo Zanetti comprou a tradicional
-                    torrefação Segafredo, em Bolonha.</p>
+                    torrefação Segafredo, em Bologna.</p>
                 <p>Sua rica história e marca ganhou força e se expandiu rapidamente. Em pouco tempo, foi consolidada
                     como sinônimo de café expresso italiano em praticamente todo o mundo.</p>
                 <p>Atualmente, a Segafredo Zanetti é reconhecida como líder no café expresso na Itália e no mundo, com
@@ -692,7 +692,7 @@ require __DIR__ . '/includes/header.php';
                             <div class="filter-icon">
                                 <img src="assets/images/CAPSULA.svg" alt="Cápsula" style="width: 100%; height: 100%;">
                             </div>
-                            <span>CÁPSULA</span>
+                            <span>CÁPSULA DE ALUMÍNIO</span>
                         </div>
 
                         <div class="filter-option filter-option-tipo" data-filter="instantaneo">
