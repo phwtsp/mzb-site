@@ -3,17 +3,10 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Café Pacaembu | Massimo Zanetti Beverage Brasil</title>
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Jost:wght@300;400;500;600;700&family=Figtree:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Raleway:wght@400;500;700&display=swap"
-        rel="stylesheet">
-    <!-- CSS -->
-    <link rel="stylesheet" href="<?= htmlspecialchars(asset('assets/css/style.css'), ENT_QUOTES, 'UTF-8') ?>">
+<?php
+$page_title = 'Café Pacaembu | Massimo Zanetti Beverage Brasil';
+require __DIR__ . '/includes/head.php';
+?>
 
     <style>
         /* Specific Styles for Pacaembu Page */
@@ -381,8 +374,6 @@
             }
         }
     </style>
-<?php require __DIR__ . '/includes/analytics.php'; ?>
-
 </head>
 
 <body>

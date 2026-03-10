@@ -3,20 +3,10 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MZB Brasil</title>
-
-    <!-- Fonts - Exact match from design -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Figtree:wght@300;400;500;600;700;800;900&family=Raleway:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
-
-    <link rel="stylesheet" href="<?= htmlspecialchars(asset('assets/css/style.css'), ENT_QUOTES, 'UTF-8') ?>">
-<?php require __DIR__ . '/includes/analytics.php'; ?>
-
+<?php
+$page_title = 'MZB Brasil';
+require __DIR__ . '/includes/head.php';
+?>
 </head>
 
 <body>

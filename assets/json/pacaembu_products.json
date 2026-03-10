@@ -89,5 +89,12 @@
         "image": "assets/images/pacaembu_filtro_descartavel.png",
         "title": "Filtro de Papel Pacaembu 103",
         "description": "Contém 30 unidades. Filtro de Papel Pacaembu 103 oferece praticidade para passar o melhor café. Descartável e prático, com selagem resistente."
+    },
+    {
+        "id": "pacaembu_capsulas_nostro",
+        "category": "capsula",
+        "image": "assets/images/pacaembu_capsulas.png",
+        "title": "Cápsulas Nostro",
+        "description": "Café em cápsulas de alta tecnologia, com aplicação de nitrogênio para conservar aroma e sabor e embalagens funcionais que podem ser usadas como porta-cápsulas.\nCápsulas compatíveis com máquinas Nespresso."
     }
 ]
