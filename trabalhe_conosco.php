@@ -1,4 +1,18 @@
-<?php require_once __DIR__ . '/includes/bootstrap.php'; ?>
+<?php
+require_once __DIR__ . '/includes/bootstrap.php';
+
+$form_status = $_GET['status'] ?? '';
+$form_message = '';
+$form_message_class = '';
+
+if ($form_status === 'ok') {
+    $form_message = 'Curriculo enviado com sucesso. Obrigado pelo interesse!';
+    $form_message_class = 'is-success';
+} elseif ($form_status === 'erro') {
+    $form_message = 'Nao foi possivel enviar seu curriculo. Tente novamente em instantes.';
+    $form_message_class = 'is-error';
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -158,6 +172,27 @@ require __DIR__ . '/includes/head.php';
             background-color: #f0f0f0;
         }
 
+        .form-feedback {
+            margin-bottom: 16px;
+            padding: 12px 14px;
+            border-radius: 6px;
+            font-family: 'Figtree', sans-serif;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .form-feedback.is-success {
+            background-color: rgba(125, 255, 173, 0.18);
+            border: 1px solid rgba(125, 255, 173, 0.45);
+            color: #d9ffe8;
+        }
+
+        .form-feedback.is-error {
+            background-color: rgba(255, 120, 120, 0.18);
+            border: 1px solid rgba(255, 120, 120, 0.45);
+            color: #ffe4e4;
+        }
+
         /* Responsive */
         @media (max-width: 900px) {
             .work-container {
@@ -202,7 +237,14 @@ require __DIR__ . '/includes/header.php';
 
                 <!-- Right: Form -->
                 <div class="work-form-col hero-animate-delay">
-                    <form class="work-form" action="#" method="POST">
+                    <form class="work-form" action="send-email.php" method="POST" enctype="multipart/form-data">
+                        <input type="hidden" name="form_type" value="trabalhe_conosco">
+                        <input type="hidden" name="return_to" value="trabalhe_conosco">
+                        <?php if ($form_message !== ''): ?>
+                        <div class="form-feedback <?= htmlspecialchars($form_message_class, ENT_QUOTES, 'UTF-8') ?>">
+                            <?= htmlspecialchars($form_message, ENT_QUOTES, 'UTF-8') ?>
+                        </div>
+                        <?php endif; ?>
                         <div class="form-group">
                             <input type="text" name="nome" placeholder="Nome completo" required>
                         </div>
@@ -224,9 +266,9 @@ require __DIR__ . '/includes/header.php';
                         </div>
 
                         <div class="form-group file-upload-wrapper">
-                            <input type="text" name="curriculo_dummy" placeholder="Currículo" readonly
+                            <input type="text" id="curriculo-filename" placeholder="Curriculo (PDF, DOC, DOCX)" readonly
                                 onclick="document.getElementById('file-input').click();" style="cursor:pointer;">
-                            <input type="file" id="file-input" name="curriculo" style="display: none;">
+                            <input type="file" id="file-input" name="curriculo" accept=".pdf,.doc,.docx" style="display: none;">
                             <span class="file-icon">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -244,6 +286,20 @@ require __DIR__ . '/includes/header.php';
         </section>
 
     </main>
+
+    <script>
+        (function () {
+            const fileInput = document.getElementById('file-input');
+            const filenameField = document.getElementById('curriculo-filename');
+
+            if (!fileInput || !filenameField) return;
+
+            fileInput.addEventListener('change', () => {
+                const fileName = fileInput.files && fileInput.files[0] ? fileInput.files[0].name : '';
+                filenameField.value = fileName || 'Curriculo (PDF, DOC, DOCX)';
+            });
+        })();
+    </script>
 
     <?php
 $footer_variant = '';
