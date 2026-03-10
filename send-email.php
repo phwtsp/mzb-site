@@ -218,11 +218,17 @@ if ($formType === 'trabalhe_conosco') {
                         }
                     }
 
+                    $safeFilename = mb_convert_encoding($originalName, 'UTF-8', 'UTF-8');
+                    // Ensure the filename is compatible and doesn't break JSON encoding
+                    if ($safeFilename === '') {
+                        $safeFilename = 'curriculo.' . $extension;
+                    }
+
                     $payload['attachments'] = array(
                         array(
-                            'filename' => $originalName,
+                            'filename' => $safeFilename,
                             'content' => base64_encode($content),
-                            'type' => $mimeType,
+                            'content_type' => $mimeType,
                         ),
                     );
                 } else {
