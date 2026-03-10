@@ -18,7 +18,7 @@ if ($form_status === 'ok') {
 
 <head>
 <?php
-$page_title = 'Contato - MZB Brasil';
+$page_title = 'Contato MZB Brasil | Atendimento e Comercial';
 require __DIR__ . '/includes/head.php';
 ?>
 

@@ -4,7 +4,7 @@
 
 <head>
 <?php
-$page_title = 'Segafredo Zanetti - MZB Brasil';
+$page_title = 'Segafredo Zanetti no Brasil | MZB Brasil';
 $head_extra_links = [
     'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap',
     'https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&display=swap',

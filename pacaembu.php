@@ -4,7 +4,7 @@
 
 <head>
 <?php
-$page_title = 'Café Pacaembu | Massimo Zanetti Beverage Brasil';
+$page_title = 'Café Pacaembu | Linha de Cafés MZB Brasil';
 require __DIR__ . '/includes/head.php';
 ?>
 

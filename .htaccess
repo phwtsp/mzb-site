@@ -7,8 +7,19 @@
     # URL canonica da home na raiz
     RewriteRule ^index\.php$ / [R=301,L]
 
+    # Forca URLs limpas quando requisitado .php diretamente
+    RewriteCond %{THE_REQUEST} \s/+(.+?)\.php(?:[\s?]|$) [NC]
+    RewriteCond %1 !^index$ [NC]
+    RewriteCond %1 !^send-email$ [NC]
+    RewriteRule ^ /%1 [R=301,L]
+
     # Mantem URLs legadas .html funcionando via URL limpa
     RewriteRule ^(.+)\.html$ /$1 [R=301,L,NC]
+
+    # Remove barra final para evitar duplicidade (exceto raiz e diretorios reais)
+    RewriteCond %{REQUEST_URI} !^/$
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.+)/$ /$1 [R=301,L]
 
     # Permite acesso sem extensao quando existir arquivo .php correspondente
     RewriteCond %{REQUEST_FILENAME} !-f

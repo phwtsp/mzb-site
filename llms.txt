@@ -1,0 +1,29 @@
+# MZB Brasil
+
+MZB Brasil e uma industria de cafe integrante do Massimo Zanetti Beverage Group, com atuacao em mercado interno, exportacao, food service e private label.
+
+## Canonical
+- https://www.mzb.com.br/
+
+## Idioma principal
+- pt-BR
+
+## Paginas principais
+- https://www.mzb.com.br/
+- https://www.mzb.com.br/sobre
+- https://www.mzb.com.br/marcas
+- https://www.mzb.com.br/segafredo
+- https://www.mzb.com.br/pacaembu
+- https://www.mzb.com.br/novasuissa
+- https://www.mzb.com.br/tradicao_itambe_grao
+- https://www.mzb.com.br/exportacao
+- https://www.mzb.com.br/sustentabilidade
+- https://www.mzb.com.br/contato
+- https://www.mzb.com.br/trabalhe_conosco
+
+## Crawling e discovery
+- robots: https://www.mzb.com.br/robots.txt
+- sitemap: https://www.mzb.com.br/sitemap.xml
+
+## Contato
+- https://www.mzb.com.br/contato

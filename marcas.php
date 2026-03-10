@@ -4,7 +4,7 @@
 
 <head>
 <?php
-$page_title = 'MZB Brasil';
+$page_title = 'Marcas e Soluções em Café | MZB Brasil';
 require __DIR__ . '/includes/head.php';
 ?>
 </head>

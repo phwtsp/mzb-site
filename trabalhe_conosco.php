@@ -18,7 +18,7 @@ if ($form_status === 'ok') {
 
 <head>
 <?php
-$page_title = 'Trabalhe Conosco - MZB Brasil';
+$page_title = 'Trabalhe Conosco | Carreiras na MZB Brasil';
 require __DIR__ . '/includes/head.php';
 ?>
 

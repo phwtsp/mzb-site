@@ -4,7 +4,7 @@
 
 <head>
 <?php
-$page_title = 'MZB Brasil - Exportação';
+$page_title = 'Exportação de Café Brasileiro | MZB Brasil';
 require __DIR__ . '/includes/head.php';
 ?>
 

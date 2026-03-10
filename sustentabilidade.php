@@ -4,7 +4,7 @@
 
 <head>
 <?php
-$page_title = 'MZB Brasil - Sustentabilidade';
+$page_title = 'Sustentabilidade na Cadeia do Café | MZB Brasil';
 require __DIR__ . '/includes/head.php';
 ?>
 </head>

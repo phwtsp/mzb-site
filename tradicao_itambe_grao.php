@@ -4,7 +4,7 @@
 
 <head>
 <?php
-$page_title = 'Tradição, Grão da Terra e Itambé - MZB Brasil';
+$page_title = 'Tradição, Grão da Terra e Itambé | Marcas MZB Brasil';
 require __DIR__ . '/includes/head.php';
 ?>
 
