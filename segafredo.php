@@ -538,7 +538,7 @@ require __DIR__ . '/includes/header.php';
         <!-- 1. HERO SECTION -->
         <section class="segafredo-hero">
             <!-- Background Image with logo and text already embedded -->
-            <img src="assets/images/segafredo_hero_new.jpg" alt="Segafredo - Torne Cada Momento Único"
+            <img src="assets/images/HEADER_Segafredo.jpg" alt="Segafredo - Torne Cada Momento Único"
                 class="segafredo-hero-bg">
         </section>
 
