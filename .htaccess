@@ -1,45 +1,42 @@
+# MZB Brasil - Configuração de Página em Construção
+# Este arquivo prioriza o index.html e redireciona tráfego para a página de aviso.
+
+# 1. Definir o arquivo de índice principal
+DirectoryIndex index.html index.php
+
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
-    # Nao redirecionar endpoint de envio para evitar quebra em POST
-    RewriteRule ^send-email\.php$ - [L]
+    # 2. Forçar HTTPS
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-    # URL canonica da home na raiz
-    RewriteRule ^index\.php$ / [R=301,L]
-
-    # Forca URLs limpas quando requisitado .php diretamente
-    RewriteCond %{THE_REQUEST} \s/+(.+?)\.php(?:[\s?]|$) [NC]
-    RewriteCond %1 !^index$ [NC]
-    RewriteCond %1 !^send-email$ [NC]
-    RewriteRule ^ /%1 [R=301,L]
-
-    # Mantem URLs legadas .html funcionando via URL limpa
-    RewriteRule ^(.+)\.html$ /$1 [R=301,L,NC]
-
-    # Remove barra final para evitar duplicidade (exceto raiz e diretorios reais)
-    RewriteCond %{REQUEST_URI} !^/$
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^(.+)/$ /$1 [R=301,L]
-
-    # Permite acesso sem extensao quando existir arquivo .php correspondente
+    # 3. Redirecionar acessos para a página em construção (index.html)
+    # Ignora se for o próprio index.html, a pasta de assets (logo/imagens) ou arquivos físicos reais
+    RewriteCond %{REQUEST_URI} !^/index\.html$
+    RewriteCond %{REQUEST_URI} !^/assets/ [NC]
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteCond %{REQUEST_FILENAME}.php -f
-    RewriteRule ^(.+?)/?$ $1.php [L]
+    RewriteRule ^(.*)$ /index.html [L,R=302]
+
+    # Caso queira permitir acesso a algum arquivo específico para testes (ex: index.php), 
+    # você pode adicionar uma exceção como esta:
+    # RewriteCond %{REQUEST_URI} !^/index\.php$
 </IfModule>
 
+# 4. Otimização de Cache
 <IfModule mod_expires.c>
     ExpiresActive On
+    ExpiresDefault "access plus 1 week"
+    ExpiresByType image/x-icon "access plus 1 month"
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType image/svg+xml "access plus 1 month"
     ExpiresByType text/css "access plus 1 month"
     ExpiresByType application/javascript "access plus 1 month"
-    ExpiresByType image/svg+xml "access plus 3 months"
-    ExpiresByType image/png "access plus 3 months"
-    ExpiresByType image/jpeg "access plus 3 months"
-    ExpiresByType image/webp "access plus 3 months"
-    ExpiresByType image/avif "access plus 3 months"
-    ExpiresDefault "access plus 7 days"
 </IfModule>
 
+# 5. Compressão Gzip (Performance)
 <IfModule mod_deflate.c>
     AddOutputFilterByType DEFLATE text/html text/plain text/css application/javascript application/json image/svg+xml
 </IfModule>
