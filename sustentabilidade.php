@@ -147,6 +147,14 @@ require __DIR__ . '/includes/header.php';
                                 9001:2015</strong></p>
                     </div>
 
+                    <!-- IFS Block (Middle) -->
+                    <div class="cert-block ifs-block">
+                        <div class="cert-img-wrapper">
+                            <img src="assets/images/sustentabilidade/ifs_progress_food.png" alt="IFS Progress Food">
+                        </div>
+                        <p class="cert-caption">SEGURANÇA DE ALIMENTOS<br><strong>IFS PROGRESS FOOD</strong></p>
+                    </div>
+
                     <!-- PQC Block (Right) -->
                     <div class="cert-block pqc-block">
                         <div class="cert-img-wrapper row-logos">

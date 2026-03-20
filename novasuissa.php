@@ -508,8 +508,7 @@ require __DIR__ . '/includes/header.php';
             </div>
 
             <p class="novasuissa-bottom-text">
-                O portfólio de produtos do Café Nova Suíssa possui diferentes tipos de café torrado e moído, incluindo
-                as opções Tradicional e Extra Forte, ambas comercializadas em embalagens de 500g.
+O portfólio de produtos do Café Nova Suíssa possui diferentes tipos de café torrado e moído, incluindo as opções Tradicional e Extra Forte, ambas comercializadas em embalagens de 500g e 250g.
             </p>
         </section>
     </main>
