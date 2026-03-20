@@ -264,7 +264,7 @@ require __DIR__ . '/includes/header.php';
 
                         <p>
                             <strong>Horário de funcionamento:</strong><br>
-                            Segunda a Sexta-feira das 8h às 17h30
+                            Segunda a Sexta-feira das 7h30 às 17h30
                         </p>
                     </div>
                 </div>

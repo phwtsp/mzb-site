@@ -391,10 +391,18 @@ require __DIR__ . '/includes/header.php';
                 <h2 class="section-title-products">PRODUTOS</h2>
 
                 <div class="products-grid-2 reveal-up stagger-children">
+                      <!-- Grão 1kg -->
+                    <div class="product-card">
+                        <img src="assets/images/tig_itambe_prod_grao1kg.png" alt="Itambé Tradicional" class="card-img">
+                        <div class="card-title">CAFÉ ITAMBÉ GRÃO 1 KG</div>
+                        <div class="card-desc">
+                            Um café versátil, com sabor aromático e suave, indicado para preparo em espresso. Forte presença nos canais de food service.
+                        </div>
+                    </div>
                     <!-- Tradicional -->
                     <div class="product-card">
                         <img src="assets/images/tig_itambe_prod_trad.png" alt="Itambé Tradicional" class="card-img">
-                        <div class="card-title">LINHA TRADICIONAL</div>
+                        <div class="card-title">CAFÉ ITAMBÉ TRADICIONAL TORRADO E MOÍDO - 500 G</div>
                         <div class="card-desc">
                             Torra tradicional para uso doméstico, indicada para preparo em café filtrado ou coado.
                         </div>
@@ -402,7 +410,7 @@ require __DIR__ . '/includes/header.php';
                     <!-- Extraforte -->
                     <div class="product-card">
                         <img src="assets/images/tig_itambe_prod_extra.png" alt="Itambé Extraforte" class="card-img">
-                        <div class="card-title">LINHA EXTRAFORTE</div>
+                        <div class="card-title">CAFÉ ITAMBÉ EXTRAFORTE TORRADO E MOÍDO - 500 G</div>
                         <div class="card-desc">
                             Torra de maior intensidade para uso doméstico, indicada para preparo em café filtrado ou
                             coado.

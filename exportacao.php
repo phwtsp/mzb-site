@@ -189,7 +189,7 @@ require __DIR__ . '/includes/header.php';
                 <p>
                     Com as marcas Alsea e Carrefour Argentina, desenvolvemos projetos amplos e muito bem estruturados de
                     cafés, o que possibilitou às empresas o aumento de sua geografia de exportação. <strong>Hoje
-                        exportamos para países como: Argentina, Bolívia, Chile, Equador, EUA, Uruguais, México, Paraguai
+                        exportamos para países como: Argentina, Bolívia, Chile, Equador, EUA, Uruguai, México, Paraguai
                         e mais.</strong>
                 </p>
             </div>
