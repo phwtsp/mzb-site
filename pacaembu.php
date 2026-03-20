@@ -395,7 +395,7 @@ require __DIR__ . '/includes/header.php';
         <section class="section-pacaembu-about">
             <img src="assets/images/pacaembu_aac.png" alt="História Pacaembu" class="about-bg-img">
             <div class="pacaembu-about-text reveal-right">
-                <p>O Café Pacaembu é uma marca tradicional brasileira, fundada em 1957 por Michel Halla, em Vargem
+                <p>O Café Pacaembu é uma marca tradicional brasileira, fundada em 1957, em Vargem
                     Grande do Sul, São Paulo.</p>
                 <p>Em 2019, a empresa foi adquirida pelo Massimo Zanetti Beverage Group, com o intuito de expandir sua
                     presença no mercado brasileiro.</p>

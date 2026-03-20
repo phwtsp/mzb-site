@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
       id: "pacaembu_soluvel_forte_50g",
       category: "instantaneo",
       image: "assets/images/pacaembu_soluvel_forte_50g.png",
-      title: "Café Solúvel Forte Sachê Pacaembu 50 Gramas",
+      title: "Café Solúvel Forte Sachê Pacaembu 40 Gramas",
       description:
         "O café para quem não tem tempo a perder. Café Solúvel Forte Sachê Pacaembu tem dissolução instantânea em água ou leite quente. Sabor forte e marcante. Praticidade: pronto em instantes!",
     },
