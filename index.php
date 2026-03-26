@@ -39,7 +39,7 @@ require __DIR__ . '/includes/header.php';
                     <img src="assets/images/home_abg.png" alt="Coffee Cup">
                 </div>
                 <div class="divider-logo">
-                    <img src="assets/images/aas.png" alt="Massimo Zanetti Signature">
+                    <img src="assets/images/01_MZB_logo01.png" alt="Massimo Zanetti Signature">
                 </div>
             </div>
 
@@ -89,13 +89,13 @@ require __DIR__ . '/includes/header.php';
                 <div class="products-content-col">
                     <!-- Logos Grid -->
                     <div class="logos-grid">
-                        <div class="logo-item"><img src="assets/images/home_logo_segafredo.png" alt="Segafredo"></div>
-                        <div class="logo-item"><img src="assets/images/abx.png" alt="Pacaembu"></div>
-                        <div class="logo-item"><img src="assets/images/home_logo_novasuissa.png" alt="Nova Suissa">
+                        <div class="logo-item"><img src="assets/images/01_segafredo_logo.png" alt="Segafredo"></div>
+                        <div class="logo-item"><img src="assets/images/01_pacaembu_logo.png" alt="Pacaembu"></div>
+                        <div class="logo-item"><img src="assets/images/01_novasuissa_logo.png" alt="Nova Suissa">
                         </div>
-                        <div class="logo-item"><img src="assets/images/aby.png" alt="Itambé"></div>
-                        <div class="logo-item"><img src="assets/images/abz.png" alt="Tradição"></div>
-                        <div class="logo-item"><img src="assets/images/home_logo_graodaterra.png" alt="Grao da Terra">
+                        <div class="logo-item"><img src="assets/images/01_itambe_logo.png" alt="Itambé"></div>
+                        <div class="logo-item"><img src="assets/images/01_tradicao_logo.png" alt="Tradição"></div>
+                        <div class="logo-item"><img src="assets/images/01_grao_logo.png" alt="Grao da Terra">
                         </div>
 
                     </div>
@@ -104,7 +104,7 @@ require __DIR__ . '/includes/header.php';
 
             <!-- Packshots - Full Width & Centered -->
             <div class="products-full-width reveal-scale">
-                <img src="assets/images/ace.png" alt="Product Range">
+                <img src="assets/images/01_mockup_pack.png" alt="Product Range">
             </div>
         </section>
 

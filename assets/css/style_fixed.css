@@ -270,7 +270,7 @@ ul {
 }
 
 .divider-logo {
-    width: 300px;
+    width: 150px;
     /* Adjust based on signature size */
     margin-bottom: 20px;
     /* Space between logo and text */
@@ -588,7 +588,7 @@ ul {
 }
 
 .footer-center img {
-    height: 72px;
+    height: 95px;
     /* Logo size */
 }
 

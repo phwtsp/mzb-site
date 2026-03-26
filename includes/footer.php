@@ -11,7 +11,7 @@ if (isset($page_scripts) && is_array($page_scripts)) {
 
 $currentPage = isset($current_page) && is_string($current_page) ? $current_page : '';
 $whiteFooterLogoPages = ['sobre', 'pacaembu', 'novasuissa'];
-$footerLogo = in_array($currentPage, $whiteFooterLogoPages, true) ? 'assets/images/Logo_Menu.png' : 'assets/images/add.png';
+$footerLogo = in_array($currentPage, $whiteFooterLogoPages, true) ? 'assets/images/Logo_Menu.png' : 'assets/images/01_MZB_logo01.png';
 ?>
 <!-- Footer -->
 <footer class="<?= htmlspecialchars($footerClass, ENT_QUOTES, 'UTF-8') ?>">
