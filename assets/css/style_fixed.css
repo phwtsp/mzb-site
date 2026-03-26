@@ -282,8 +282,6 @@ ul {
     display: block;
     margin: 0 auto;
     /* Ensure image is centered in its box */
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
 }
 
 .about-container {
@@ -592,8 +590,6 @@ ul {
 .footer-center img {
     height: 95px;
     /* Logo size */
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
 }
 
 .btn-contact-footer {
