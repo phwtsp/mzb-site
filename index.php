@@ -39,7 +39,7 @@ require __DIR__ . '/includes/header.php';
                     <img src="assets/images/home_abg.png" alt="Coffee Cup">
                 </div>
                 <div class="divider-logo">
-                    <img src="assets/images/01_MZB_logo01.png" alt="Massimo Zanetti Signature">
+                    <img src="assets/images/01_MZB_logo01.webp" alt="Massimo Zanetti Signature">
                 </div>
             </div>
 
