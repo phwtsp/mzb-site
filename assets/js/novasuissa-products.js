@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
       image: "assets/images/novasuissa_prod_tradicional.png",
       title: "LINHA TRADICIONAL",
       description:
-        "Café para o consumo diário, com torra mais escura e perfil de sabor mais intenso. Amplamente disponível nos canais de varejo e atacado.",
+        "Café para o consumo diário, com torra média e perfil de sabor mais suave. Amplamente disponível nos canais de varejo e atacado. ",
     },
     {
       id: "extraforte",
@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
       image: "assets/images/novasuissa_prod_extraforte.png",
       title: "LINHA EXTRAFORTE",
       description:
-        "Café para o consumo diário, com torra mais escura e perfil de sabor mais intenso. Amplamente disponível nos canais de varejo e atacado.",
+        "Café para o consumo diário, com torra média e perfil de sabor mais intenso. Amplamente disponível nos canais de varejo e atacado.",
     },
     {
       id: "filtro_reutilizavel",

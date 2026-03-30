@@ -488,7 +488,7 @@ require __DIR__ . '/includes/header.php';
                                 <img src="assets/images/novasuissa_grao_moido.svg" alt="Grão e Moído"
                                     style="width: 100%; height: 100%;">
                             </div>
-                            <span>GRÃO E MOÍDO</span>
+                            <span>MOÍDO</span>
                         </div>
 
                         <div class="filter-option" data-filter="filtro">
