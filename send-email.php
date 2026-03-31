@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '/includes/bootstrap.php';
 
-define('MAIL_TO', 'paulo.pereira@duovozz.com.br');
+define('MAIL_TO', 'luiza.silva@mzb-bra.com.br');
 define('MAX_ATTACHMENT_SIZE', 8 * 1024 * 1024); // 8MB
 define('MAIL_DEBUG_LOG', __DIR__ . '/mail-debug.log');
 
