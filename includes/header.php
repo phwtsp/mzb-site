@@ -50,7 +50,7 @@ $menuLogo = in_array($currentPage, $whiteLogoPages, true) ? 'assets/images/Logo_
                     </ul>
                 </li>
                 <li class="has-submenu">
-                    <a href="#" class="nav-item<?= $isServicesSection ? ' active' : '' ?>">SERVIÇOS</a>
+                    <a href="#" class="nav-item<?= $isServicesSection ? ' active' : '' ?>">PARA EMPRESAS</a>
                     <button class="submenu-toggle" aria-label="Toggle Submenu">
                         <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M1 1L6 6L11 1" stroke="#808080" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
