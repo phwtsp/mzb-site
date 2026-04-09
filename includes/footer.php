@@ -10,8 +10,7 @@ if (isset($page_scripts) && is_array($page_scripts)) {
 }
 
 $currentPage = isset($current_page) && is_string($current_page) ? $current_page : '';
-$whiteFooterLogoPages = ['sobre', 'pacaembu', 'novasuissa'];
-$footerLogo = in_array($currentPage, $whiteFooterLogoPages, true) ? 'assets/images/Logo_Menu.png' : 'assets/images/MZB.svg';
+$footerLogo = 'assets/images/MZB.svg';
 ?>
 <!-- Footer -->
 <footer class="<?= htmlspecialchars($footerClass, ENT_QUOTES, 'UTF-8') ?>">

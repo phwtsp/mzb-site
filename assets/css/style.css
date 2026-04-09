@@ -2305,6 +2305,10 @@ ul {
     color: #036398 !important;
 }
 
+.footer-blue .footer-center img {
+    filter: brightness(0) invert(1);
+}
+
 /* Footer Light Blue (Used in Segafredo, Exportacao, etc) */
 .footer-light-blue {
     background-color: #f2f2f2;

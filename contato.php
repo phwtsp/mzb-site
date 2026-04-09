@@ -17,10 +17,10 @@ if ($form_status === 'ok') {
 <html lang="pt-BR">
 
 <head>
-<?php
-$page_title = 'Contato MZB Brasil | Atendimento e Comercial';
-require __DIR__ . '/includes/head.php';
-?>
+    <?php
+    $page_title = 'Contato MZB Brasil | Atendimento e Comercial';
+    require __DIR__ . '/includes/head.php';
+    ?>
 
     <style>
         /* Contact Page specific styles */
@@ -228,17 +228,17 @@ require __DIR__ . '/includes/head.php';
 
 <body>
 
-<?php
-$current_page = 'contato';
-require __DIR__ . '/includes/header.php';
-?>
+    <?php
+    $current_page = 'contato';
+    require __DIR__ . '/includes/header.php';
+    ?>
 
     <main>
 
         <!-- HERO -->
         <section class="hero-contact">
             <div class="hero-contact-bg">
-                <img src="assets/images/header_contato.jpg" alt="Contato Header Coffee">
+                <img src="assets/images/header_contato_2.jpg" alt="Contato Header Coffee">
                 <div class="hero-contact-overlay"
                     style="position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.2);"></div>
             </div>
@@ -253,8 +253,8 @@ require __DIR__ . '/includes/header.php';
             <div class="contact-container">
                 <!-- Left: Info -->
                 <div class="contact-info-col reveal-left">
-                    <!-- Using standard logo add.png but inverted to white via CSS -->
-                    <img src="assets/images/add.png" alt="Massimo Zanetti Beverage Brasil" class="contact-logo">
+                    <!-- Using standard logo MZB.svg but inverted to white via CSS -->
+                    <img src="assets/images/MZB.svg" alt="Massimo Zanetti Beverage Brasil" class="contact-logo">
 
                     <div class="contact-details">
                         <p>
@@ -275,9 +275,9 @@ require __DIR__ . '/includes/header.php';
                         <input type="hidden" name="form_type" value="contato">
                         <input type="hidden" name="return_to" value="contato">
                         <?php if ($form_message !== ''): ?>
-                        <div class="form-feedback <?= htmlspecialchars($form_message_class, ENT_QUOTES, 'UTF-8') ?>">
-                            <?= htmlspecialchars($form_message, ENT_QUOTES, 'UTF-8') ?>
-                        </div>
+                            <div class="form-feedback <?= htmlspecialchars($form_message_class, ENT_QUOTES, 'UTF-8') ?>">
+                                    <?= htmlspecialchars($form_message, ENT_QUOTES, 'UTF-8') ?>
+                            </div>
                         <?php endif; ?>
                         <div class="form-group">
                             <input type="text" name="nome" placeholder="Nome" required>
@@ -304,10 +304,10 @@ require __DIR__ . '/includes/header.php';
     </main>
 
     <?php
-$footer_variant = '';
-$page_scripts = [];
-require __DIR__ . '/includes/footer.php';
-?>
+    $footer_variant = '';
+    $page_scripts = [];
+    require __DIR__ . '/includes/footer.php';
+    ?>
 </body>
 
 </html>
